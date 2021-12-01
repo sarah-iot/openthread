@@ -73,7 +73,8 @@ typedef enum otBorderAgentState
 otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
- *
+ * @cli baport
+ * 
  * @code
  * > ba port
  * 49153
