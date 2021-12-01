@@ -73,19 +73,8 @@ typedef enum otBorderAgentState
 otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
- * @section sec An example section
- * This page contains the subsections \ref subsection1 and \ref subsection2.
- * For more info see page \ref page2.
- * @subsection subsection1 The first subsection
- * Text.
- * @subsection subsection2 The second subsection
- * More text.
  *
- * @mod
- * @moditem{ 17.05.2013, TEST }
- * @moditem{ 25.12.0033, Sarah Brenner }
- *
- * @req #42 - The system shall work in any situation
+ * @cli ba port
  *
  * @code
  * > ba port
