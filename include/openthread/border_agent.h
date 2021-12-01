@@ -74,7 +74,7 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
  *
- * @cli ba port
+ * @xrefitem cli "CLI Command" "Command List" ba port
  *
  * @code
  * > ba port
