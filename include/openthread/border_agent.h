@@ -73,7 +73,7 @@ typedef enum otBorderAgentState
 otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
- * @breif Gets the UDP port of the Thread Border Agent service.
+ * @brief Gets the UDP port of the Thread Border Agent service.
  *
  * @cli ba port
  *  
