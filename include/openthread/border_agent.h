@@ -81,6 +81,8 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
  * @subsection subsection2 The second subsection
  * More text.
  * 
+ * See @l{SomeClass} for more information.
+ * 
  * @code
  * > ba port
  * 49153
