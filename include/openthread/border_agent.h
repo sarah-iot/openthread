@@ -85,6 +85,8 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
  * @moditem{ 17.05.2013, TEST }
  * @moditem{ 25.12.0033, Sarah Brenner }
  *
+ * @req #42 - The system shall work in any situation
+ *
  * @code
  * > ba port
  * 49153
