@@ -45,7 +45,7 @@ extern "C" {
  * @addtogroup api-border-agent
  *
  * @brief
- *   This module includes functions for the Thread Border Agent role.
+ *   Includes functions to get the Border Agent state and UDP port.
  *
  * @{
  *
@@ -63,18 +63,26 @@ typedef enum otBorderAgentState
 } otBorderAgentState;
 
 /**
- * This function gets the state of Thread Border Agent role.
+ * Gets the #otBorderAgentState of the Thread Border Agent role.
+ *
+ * @cli ba state
+ *
+ * @code
+ * > ba state
+ * Started
+ * Done
+ * @endcode
  *
  * @param[in]  aInstance  A pointer to an OpenThread instance.
  *
- * @returns State of the Border Agent.
+ * @returns The current #otBorderAgentState of the Border Agent.
  *
  */
 otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
  *
- * @xrefitem cli "CLI Command" "Command List" ba port
+ * @cli ba port
  *
  * @code
  * > ba port
@@ -86,7 +94,7 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
  *
  * @param[in]  aInstance  A pointer to an OpenThread instance.
  *
- * @returns UDP port of the Border Agent.
+ * @returns The UDP port of the Border Agent.
  *
  */
 uint16_t otBorderAgentGetUdpPort(otInstance *aInstance);
