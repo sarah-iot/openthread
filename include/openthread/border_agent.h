@@ -68,7 +68,7 @@ typedef enum otBorderAgentState
  * @cli ba state
  *
  * @code
- * > ba state
+ * ba state
  * Started
  * Done
  * @endcode
@@ -85,7 +85,7 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
  * @cli ba port
  *
  * @code
- * > ba port
+ * ba port
  * 49153
  * done
  * @endcode
