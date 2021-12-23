@@ -158,7 +158,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
 /**
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  * 
- * @cli prefix add <prefix> [padcrosnD][#otRoutePreference - 'high', 'med', or 'low']
+ * @cli prefix add
  * 
  * @code prefix add 2001:dead:beef:cafe::/64 paros med
  * Done
