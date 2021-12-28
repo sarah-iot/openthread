@@ -54,15 +54,19 @@ typedef uint32_t otNetworkDataIterator; ///< Used to iterate through Network Dat
 
 /**
  * This structure represents a Border Router configuration.
+ * Flags for the `prefix add` CLI Command are also included in the following descriptions.
+ * Only use these flags with `ot-ctl` from the command line.
  */
 typedef struct otBorderRouterConfig
 {
     otIp6Prefix mPrefix;           ///< The IPv6 prefix.
     signed int  mPreference : 2;   ///< A 2-bit signed int preference (`OT_ROUTE_PREFERENCE_*` values).
-    bool        mPreferred : 1;    ///< Whether prefix is preferred.
+    bool        mPreferred : 1;    ///< Whether prefix is preferred. Use `p` for the `prefix add` CLI Command.
     bool        mSlaac : 1;        ///< Whether prefix can be used for address auto-configuration (SLAAC).
-    bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent.
+                                   ///< Use `a` for the `prefix add` CLI Command.
+    bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. Use `d` for the `prefix add` CLI Command.
     bool        mConfigure : 1;    ///< Whether DHCPv6 Agent supplying other config data.
+                                   ///< Use `c` for the `prefix add` CLI Command.
     bool        mDefaultRoute : 1; ///< Whether border router is a default router for prefix.
     bool        mOnMesh : 1;       ///< Whether this prefix is considered on-mesh.
     bool        mStable : 1;       ///< Whether this configuration is considered Stable Network Data.
