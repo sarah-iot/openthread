@@ -159,7 +159,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  * 
  * @cli prefix add
- * `&gt;prefix&lt; [padcrosnD][high, med, or low]`
+ * `&lt;prefix&gt; [padcrosnD][high, med, or low]`
  * To set this configuration from the command line, you'll need to pass certain flags.
  * These flags are defined in #otBorderRouterConfig. The following example uses the letters
  * `p`, `a`, `r`, `o`, and `s` to set the `mPreferred`, `mSlaac`, `mDefaultRoute`, `mOnMesh`,
