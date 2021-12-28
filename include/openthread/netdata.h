@@ -61,7 +61,8 @@ typedef struct otBorderRouterConfig
 {
     otIp6Prefix mPrefix;           ///< The IPv6 prefix.
     signed int  mPreference : 2;   ///< A 2-bit signed int preference (`OT_ROUTE_PREFERENCE_*` values).
-    bool        mPreferred : 1;    ///< Whether prefix is preferred. Use `p` for the `prefix add` CLI Command.
+    bool        mPreferred : 1;    ///< Whether prefix is preferred.
+                                   ///< Use `p` for the `prefix add` CLI Command.
     bool        mSlaac : 1;        ///< Whether prefix can be used for address auto-configuration (SLAAC).
                                    ///< Use `a` for the `prefix add` CLI Command.
     bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. Use `d` for the `prefix add` CLI Command.
