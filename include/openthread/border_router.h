@@ -78,12 +78,10 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
  * @note  The Border Routing Manager is disabled by default.
  * 
  * @cli{br enable}
- * 
  * @code
  * br enable
  * Done
  * @endcode
- * 
  * @code
  * br disable
  * Done
@@ -105,7 +103,6 @@ otError otBorderRoutingSetEnabled(otInstance *aInstance, bool aEnabled);
  * in the Thread network if there isn't already an OMR prefix.
  * 
  * @cli{br omrprefix}
- * 
  * @code
  * br omrprefix
  * fdfc:1ff5:1512:5622::/64
@@ -129,7 +126,6 @@ otError otBorderRoutingGetOmrPrefix(otInstance *aInstance, otIp6Prefix *aPrefix)
  * on-link prefix being advertised on the link.
  * 
  * @cli{br onlinkprefix}
- * 
  * @code br onlinkprefix
  * fd41:2650:a6f5:0::/64
  * Done
@@ -159,16 +155,16 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  * 
  * @cli{prefix add}
- * @par `prefix add &lt;prefix&gt; [padcrosnD][high, med, or low]`
- * @par To set this configuration from the command line, you'll need to pass certain flags.
+ * @par Parameters
+ * `prefix add &lt;prefix&gt; [padcrosnD][high, med, or low]`
+ * @par 
+ * To set this configuration from the command line, you'll need to pass certain flags.
  * These flags are defined in #otBorderRouterConfig. The following example uses the letters
  * `p`, `a`, `r`, `o`, and `s` to set the `mPreferred`, `mSlaac`, `mDefaultRoute`, `mOnMesh`,
  * and `mStable` flags, consecutively.
- * 
  * @code prefix add 2001:dead:beef:cafe::/64 paros med
  * Done
  * @endcode
- *
  * @code prefix add fd00:7d03:7d03:7d03::/64 prosD med
  * Done
  * @endcode

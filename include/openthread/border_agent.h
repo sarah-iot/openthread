@@ -82,7 +82,6 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 /**
  *
  * @cli{ba port}
- *
  * @code
  * ba port
  * 49153
