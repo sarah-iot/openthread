@@ -155,6 +155,12 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  * 
  * @cli prefix add
+ * @code prefix add 2001:dead:beef:cafe::/64 paros med
+ * Done
+ * @endcode
+ * @code prefix add fd00:7d03:7d03:7d03::/64 prosD med
+ * Done
+ * @endcode
  * @par Parameters
  * `prefix add &lt;prefix&gt; [padcrosnD][high, med, or low]`
  * @par 
@@ -162,12 +168,6 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * These flags are defined in #otBorderRouterConfig. The following example uses the letters
  * `p`, `a`, `r`, `o`, and `s` to set the `mPreferred`, `mSlaac`, `mDefaultRoute`, `mOnMesh`,
  * and `mStable` flags, consecutively.
- * @code prefix add 2001:dead:beef:cafe::/64 paros med
- * Done
- * @endcode
- * @code prefix add fd00:7d03:7d03:7d03::/64 prosD med
- * Done
- * @endcode
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.
