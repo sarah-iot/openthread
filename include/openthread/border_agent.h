@@ -65,8 +65,7 @@ typedef enum otBorderAgentState
 /**
  * Gets the #otBorderAgentState of the Thread Border Agent role.
  *
- * @cli
- * @brief ba state
+ * @cli ba state
  * @code
  * ba state
  * Started
@@ -82,8 +81,7 @@ otBorderAgentState otBorderAgentGetState(otInstance *aInstance);
 
 /**
  *
- * @cli
- * @brief ba port
+ * @cli ba port
  * @code
  * ba port
  * 49153

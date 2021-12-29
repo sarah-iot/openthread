@@ -77,7 +77,7 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
  *
  * @note  The Border Routing Manager is disabled by default.
  * 
- * @cli{br enable}
+ * @cli br enable
  * @code
  * br enable
  * Done
@@ -102,7 +102,7 @@ otError otBorderRoutingSetEnabled(otInstance *aInstance, bool aEnabled);
  * The randomly generated 64-bit prefix will be published
  * in the Thread network if there isn't already an OMR prefix.
  * 
- * @cli{br omrprefix}
+ * @cli br omrprefix
  * @code
  * br omrprefix
  * fdfc:1ff5:1512:5622::/64
@@ -125,7 +125,7 @@ otError otBorderRoutingGetOmrPrefix(otInstance *aInstance, otIp6Prefix *aPrefix)
  * on the infrastructure link if there isn't already a usable
  * on-link prefix being advertised on the link.
  * 
- * @cli{br onlinkprefix}
+ * @cli br onlinkprefix
  * @code br onlinkprefix
  * fd41:2650:a6f5:0::/64
  * Done
@@ -154,7 +154,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
 /**
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  * 
- * @cli{prefix add}
+ * @cli prefix add
  * @par Parameters
  * `prefix add &lt;prefix&gt; [padcrosnD][high, med, or low]`
  * @par 
