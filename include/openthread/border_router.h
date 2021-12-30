@@ -76,7 +76,7 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
  * Enables or disables the Border Routing Manager.
  *
  * @note  The Border Routing Manager is disabled by default.
- * 
+ *
  * @cli br enable
  * @code
  * br enable
@@ -101,7 +101,7 @@ otError otBorderRoutingSetEnabled(otInstance *aInstance, bool aEnabled);
  *
  * The randomly generated 64-bit prefix will be published
  * in the Thread network if there isn't already an OMR prefix.
- * 
+ *
  * @cli br omrprefix
  * @code
  * br omrprefix
@@ -124,7 +124,7 @@ otError otBorderRoutingGetOmrPrefix(otInstance *aInstance, otIp6Prefix *aPrefix)
  * The randomly generated 64-bit prefix will be advertised
  * on the infrastructure link if there isn't already a usable
  * on-link prefix being advertised on the link.
- * 
+ *
  * @cli br onlinkprefix
  * @code br onlinkprefix
  * fd41:2650:a6f5:0::/64
@@ -141,11 +141,38 @@ otError otBorderRoutingGetOmrPrefix(otInstance *aInstance, otIp6Prefix *aPrefix)
 otError otBorderRoutingGetOnLinkPrefix(otInstance *aInstance, otIp6Prefix *aPrefix);
 
 /**
- * This method provides a full or stable copy of the local Thread Network Data.
+ * Provides a full or stable copy of the local Thread Network Data, including
+ * prefixes, routes, and services.
+ *
+ * Thread Network Data contains information about Border Routers and other servers
+ * available in the Thread network. Border Routers and devices offering services
+ * register their information with the Leader. The Leader collects and structures
+ * this information within the Thread Network Data and distributes the information
+ * to all devices in the Thread Network.
+ *
+ * Border Routers may register prefixes assigned to the Thread Network and prefixes
+ * that they offer routes for. Services may register any information relevant to the
+ * service itself.
+ *
+ * Border Router and service information may be stable or temporary. Stable Thread
+ * Network Data is distributed to all devices, including Sleepy End Devices (SEDs).
+ * Temporary Network Data is distributed to all nodes except SEDs.
+ *
+ * @cli netdata show
+ * @code
+ * netdata show
+ * Prefixes:
+ * fd00:dead:beef:cafe::/64 paros med dc00
+ * Routes:
+ * Services:
+ * Done
+ * @endcode
+ * @note The CLI command returns full network data.
  *
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
- * @param[out]    aData        A pointer to the data buffer.
+ * @param[out]    aData        A pointer to the data buffer. For more information, refer to
+ *                             [network_data](https://github.com/openthread/openthread/blob/main/src/core/thread/network_data.hpp).
  * @param[inout]  aDataLength  On entry, size of the data buffer pointed to by @p aData.
  *                             On exit, number of copied bytes.
  */
@@ -153,17 +180,17 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
 
 /**
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
- * 
+ *
  * @cli prefix add
  * @code prefix add 2001:dead:beef:cafe::/64 paros med
  * Done
  * @endcode
- * @code prefix add fd00:7d03:7d03:7d03::/64 prosD med
+ * @code prefix add fd00:7d03:7d03:7d03::/64 prosD low
  * Done
  * @endcode
  * @par Parameters
- * `prefix add &lt;prefix&gt; [padcrosnD][high, med, or low]`
- * @par 
+ * `prefix add <prefix> [padcrosnD][high, med, or low]`
+ * @par
  * To set this configuration from the command line, you'll need to pass certain flags.
  * These flags are defined in #otBorderRouterConfig. The following example uses the letters
  * `p`, `a`, `r`, `o`, and `s` to set the `mPreferred`, `mSlaac`, `mDefaultRoute`, `mOnMesh`,
