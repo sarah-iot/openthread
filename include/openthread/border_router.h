@@ -194,7 +194,8 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * To set this configuration from the command line, you'll need to pass certain flags.
  * These flags are defined in #otBorderRouterConfig. For example, the letters
  * `p`, `a`, `r`, `o`, and `s` can be used to set the `#otBorderRouterConfig::mPreferred`,
- * `mSlaac`, `mDefaultRoute`, `mOnMesh`, and `mStable` flags, consecutively.
+ * `#otBorderRouterConfig::mSlaac`, `#otBorderRouterConfig::mDefaultRoute`,
+ * `#otBorderRouterConfig::mOnMesh`, and `#otBorderRouterConfig::mStable` flags, consecutively.
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.

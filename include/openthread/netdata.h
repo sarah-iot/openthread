@@ -61,18 +61,25 @@ typedef struct otBorderRouterConfig
 {
     otIp6Prefix mPrefix;           ///< The IPv6 prefix.
     signed int  mPreference : 2;   ///< A 2-bit signed int preference (`OT_ROUTE_PREFERENCE_*` values).
+                                   ///< Use `high`, `med`, or `low` for the `prefix add` CLI Command.
     bool        mPreferred : 1;    ///< Whether prefix is preferred.
                                    ///< Use `p` for the `prefix add` CLI Command.
     bool        mSlaac : 1;        ///< Whether prefix can be used for address auto-configuration (SLAAC).
                                    ///< Use `a` for the `prefix add` CLI Command.
-    bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. Use `d` for the `prefix add` CLI Command.
+    bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. 
+                                   ///< Use `d` for the `prefix add` CLI Command.
     bool        mConfigure : 1;    ///< Whether DHCPv6 Agent supplying other config data.
                                    ///< Use `c` for the `prefix add` CLI Command.
     bool        mDefaultRoute : 1; ///< Whether border router is a default router for prefix.
-    bool        mOnMesh : 1;       ///< Whether this prefix is considered on-mesh.
+                                   ///< Use `r` for the `prefix add` CLI Command.
+    bool        mOnMesh : 1;       ///< Whether this prefix is considered On-Mesh.
+                                   ///< Use `o` for the `prefix add` CLI Command.
     bool        mStable : 1;       ///< Whether this configuration is considered Stable Network Data.
+                                   ///< Use `s` for the `prefix add` CLI Command.
     bool        mNdDns : 1;        ///< Whether this border router can supply DNS information via ND.
+                                   ///< Use `n` for the `prefix add` CLI Command.
     bool        mDp : 1;           ///< Whether prefix is a Thread Domain Prefix (added since Thread 1.2).
+                                   ///< Use `D` for the `prefix add` CLI Command.
     uint16_t    mRloc16;           ///< The border router's RLOC16 (value ignored on config add).
 } otBorderRouterConfig;
 
