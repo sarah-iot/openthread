@@ -192,9 +192,9 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * `prefix add <prefix> [padcrosnD][high, med, or low]`
  * @par
  * To set this configuration from the command line, you'll need to pass certain flags.
- * These flags are defined in #otBorderRouterConfig. The following example uses the letters
- * `p`, `a`, `r`, `o`, and `s` to set the `mPreferred`, `mSlaac`, `mDefaultRoute`, `mOnMesh`,
- * and `mStable` flags, consecutively.
+ * These flags are defined in #otBorderRouterConfig. For example, the letters
+ * `p`, `a`, `r`, `o`, and `s` can be used to set the `#otBorderRouterConfig::mPreferred`,
+ * `mSlaac`, `mDefaultRoute`, `mOnMesh`, and `mStable` flags, consecutively.
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.
