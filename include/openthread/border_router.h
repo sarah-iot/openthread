@@ -159,6 +159,7 @@ otError otBorderRoutingGetOnLinkPrefix(otInstance *aInstance, otIp6Prefix *aPref
  * Temporary Network Data is distributed to all nodes except SEDs.
  *
  * @cli netdata show
+ * @note The CLI command returns full network data.
  * @code
  * netdata show
  * Prefixes:
@@ -167,7 +168,6 @@ otError otBorderRoutingGetOnLinkPrefix(otInstance *aInstance, otIp6Prefix *aPref
  * Services:
  * Done
  * @endcode
- * @note The CLI command returns full network data.
  *
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
@@ -182,20 +182,20 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Add a #otBorderRouterConfig Border Router configuration to the local network data.
  *
  * @cli prefix add
- * @code prefix add 2001:dead:beef:cafe::/64 paros med
- * Done
- * @endcode
- * @code prefix add fd00:7d03:7d03:7d03::/64 prosD low
- * Done
- * @endcode
- * @par Parameters
- * `prefix add <prefix> [padcrosnD][high, med, or low]`
  * @par
  * To set this configuration from the command line, you'll need to pass certain flags.
  * These flags are defined in #otBorderRouterConfig. For example, the letters
  * `p`, `a`, `r`, `o`, and `s` can be used to set the `#otBorderRouterConfig::mPreferred`,
  * `#otBorderRouterConfig::mSlaac`, `#otBorderRouterConfig::mDefaultRoute`,
  * `#otBorderRouterConfig::mOnMesh`, and `#otBorderRouterConfig::mStable` flags, consecutively.
+ * @par Parameters
+ * `prefix add <prefix> [padcrosnD][high, med, or low]`
+ * @code prefix add 2001:dead:beef:cafe::/64 paros med
+ * Done
+ * @endcode
+ * @code prefix add fd00:7d03:7d03:7d03::/64 prosD low
+ * Done
+ * @endcode
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.
