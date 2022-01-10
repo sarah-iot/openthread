@@ -88,8 +88,6 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
  * br disable
  * Done
  * @endcode
- * 
- * @l{otBorderRoutingInit, Test}
  *
  * @param[in]  aInstance  A pointer to an OpenThread instance.
  * @param[in]  aEnabled   A boolean to enable or disable the routing manager.
