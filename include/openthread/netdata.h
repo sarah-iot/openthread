@@ -137,7 +137,12 @@ typedef struct otServiceConfig
 } otServiceConfig;
 
 /**
- * This method provides a full or stable copy of the Partition's Thread Network Data.
+ * This method provides a full or stable copy of the Partition's Thread network data, including
+ * prefixes, routes, and services.
+ * 
+ * For more information on network data and network data CLI Commands, refer to the
+ * [Network Data Quick Start](/reference/cli/quickstarts/netdata). For OTBR specific network APIs,
+ * refer to #otBorderRouterGetNetData, #otBorderRoutingGetOnLinkPrefix, and #otBorderRouterGetNextOnMeshPrefix.
  * 
  * @cli netdata show
  * @code
@@ -151,16 +156,18 @@ typedef struct otServiceConfig
  * 44970 01 9a04b000000e10 s 4000
  * Done
  * @endcode
+ * @par `netdata show` combines several APIs to return network data. To review the CLI code, refer to the 
+ * [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401).
  * @note The CLI command returns full network data.
+ * @sa [br omrprefix](/reference/cli/commands#br_omrprefix)
+ * @sa [br onlinkprefix](/reference/cli/commands#br_onlinkprefix)
+ * @cliref br test
  * 
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
  * @param[out]    aData        A pointer to the data buffer.
  * @param[inout]  aDataLength  On entry, size of the data buffer pointed to by @p aData.
  *                             On exit, number of copied bytes.
- * 
- * @see otBorderRouterGetNetData
- * @see /reference/cli/quickstarts/netdata
  *
  */
 otError otNetDataGet(otInstance *aInstance, bool aStable, uint8_t *aData, uint8_t *aDataLength);
