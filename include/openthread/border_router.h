@@ -47,6 +47,8 @@ extern "C" {
  *
  * @brief
  *  This module includes functions to manage local network data with the OpenThread Border Router.
+ * 
+ * To use the APIs in this module, call #otBorderRoutingInit first.
  *
  * @{
  *
@@ -86,6 +88,8 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
  * br disable
  * Done
  * @endcode
+ * 
+ * @l br omrprefix
  *
  * @param[in]  aInstance  A pointer to an OpenThread instance.
  * @param[in]  aEnabled   A boolean to enable or disable the routing manager.
@@ -97,10 +101,11 @@ otError otBorderRoutingInit(otInstance *aInstance, uint32_t aInfraIfIndex, bool 
 otError otBorderRoutingSetEnabled(otInstance *aInstance, bool aEnabled);
 
 /**
- * Returns the off-mesh-routable (OMR) prefix.
- *
- * The randomly generated 64-bit prefix will be published
- * in the Thread network if there isn't already an OMR prefix.
+ * Returns the off-mesh-routable (OMR) prefix, for example `fdfc:1ff5:1512:5622::/64`. 
+ * 
+ * An OMR prefix is a randomly generated 64-bit prefix that's published in the
+ * Thread network if there isn't already an OMR prefix. This prefix can be reached
+ * from the local Wi-Fi or Ethernet network.
  *
  * @cli br omrprefix
  * @code
@@ -119,11 +124,10 @@ otError otBorderRoutingSetEnabled(otInstance *aInstance, bool aEnabled);
 otError otBorderRoutingGetOmrPrefix(otInstance *aInstance, otIp6Prefix *aPrefix);
 
 /**
- * Returns the on-link prefix for the adjacent infrastructure link.
+ * Returns the On-Link prefix for the adjacent infrastructure link, for example `fd41:2650:a6f5:0::/64`.
  *
- * The randomly generated 64-bit prefix will be advertised
- * on the infrastructure link if there isn't already a usable
- * on-link prefix being advertised on the link.
+ * An On-Link prefix is a randomly generated 64-bit prefix that's advertised on the infrastructure
+ * link if there isn't already a usable on-link prefix being advertised on the link.
  *
  * @cli br onlinkprefix
  * @code br onlinkprefix
@@ -143,32 +147,7 @@ otError otBorderRoutingGetOnLinkPrefix(otInstance *aInstance, otIp6Prefix *aPref
 /**
  * Provides a full or stable copy of the local Thread Network Data, including
  * prefixes, routes, and services.
- *
- * Thread Network Data contains information about Border Routers and other servers
- * available in the Thread network. Border Routers and devices offering services
- * register their information with the Leader. The Leader collects and structures
- * this information within the Thread Network Data and distributes the information
- * to all devices in the Thread Network.
- *
- * Border Routers may register prefixes assigned to the Thread Network and prefixes
- * that they offer routes for. Services may register any information relevant to the
- * service itself.
- *
- * Border Router and service information may be stable or temporary. Stable Thread
- * Network Data is distributed to all devices, including Sleepy End Devices (SEDs).
- * Temporary Network Data is distributed to all nodes except SEDs.
- *
- * @cli netdata show
- * @code
- * netdata show
- * Prefixes:
- * fd00:dead:beef:cafe::/64 paros med dc00
- * Routes:
- * Services:
- * Done
- * @endcode
- * @note The CLI command returns full network data.
- *
+ * 
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
  * @param[out]    aData        A pointer to the data buffer. For more information, refer to

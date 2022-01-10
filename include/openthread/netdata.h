@@ -138,12 +138,29 @@ typedef struct otServiceConfig
 
 /**
  * This method provides a full or stable copy of the Partition's Thread Network Data.
- *
+ * 
+ * @cli netdata show
+ * @code
+ * netdata show
+ * Prefixes:
+ * fd00:dead:beef:cafe::/64 paros med dc00
+ * Routes:
+ * fd49:7770:7fc5:0::/64 s med 4000
+ * Services:
+ * 44970 5d c000 s 4000
+ * 44970 01 9a04b000000e10 s 4000
+ * Done
+ * @endcode
+ * @note The CLI command returns full network data.
+ * 
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
  * @param[out]    aData        A pointer to the data buffer.
  * @param[inout]  aDataLength  On entry, size of the data buffer pointed to by @p aData.
  *                             On exit, number of copied bytes.
+ * 
+ * @see otBorderRouterGetNetData
+ * @see /reference/cli/quickstarts/netdata
  *
  */
 otError otNetDataGet(otInstance *aInstance, bool aStable, uint8_t *aData, uint8_t *aDataLength);
