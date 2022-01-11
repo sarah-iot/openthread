@@ -96,55 +96,55 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
 
 /**
  * Requests a DNS/SRP Service Anycast Address to be published in the Thread Network Data. Any current
- * DNS/SRP Service entry being published from a previous call to #otNetDataPublishDnsSrpServiceAnycast,
- * any `otNetDataPublishDnsSrpService{Type}()` functions, or sent from the `publish dnssrp` CLI Command
- * is removed and replaced with the new arguments. 
+ * DNS/SRP Service entry being published from a previous call to any `otNetDataPublishDnsSrpService{Anycast|Unicast}()`
+ * functions or sent from the `publish dnssrp` CLI Command is removed and replaced with the new arguments. 
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  * 
- * @cli publish dnssrp
+ * @cli netdata publish dnssrp anycast
  * @code
  * netdata publish dnssrp anycast 1
  * Done
- * @endcode 
- * @code
- * netdata publish dnssrp unicast fd00::1234 51525
- * Done
  * @endcode
- * @code 
- * netdata publish dnssrp unicast 50152
- * Done
- * @endcode
- * @par Parameters
- * `netdata publish dnssrp anycast <seq-num>`
- *  Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * `netdata publish dnssrp unicast <address> <port>`
- * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
- * The address and port information is included in Service TLV data.
- * `netdata publish dnssrp unicast <port>`
- * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
- * EID for the address. The address and port information is included in Server TLV data.
+ * @par Parameter `netdata publish dnssrp anycast <seq-num>`
+ * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
+ * @sa netdata publish dnssrp unicast
+ * @sa netdata publish dnssrp unicast mle
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
  * @param[in] aSequenceNUmber  The sequence number of DNS/SRP Anycast Service.
+ * 
+ * @sa otNetDataPublishDnsSrpServiceUnicast
+ * @sa otNetDataPublishDnsSrpServiceUnicastMeshLocalEid
  *
  */
 void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequenceNUmber);
 
 /**
- * This function requests "DNS/SRP Service Unicast Address" to be published in the Thread Network Data.
+ * Publishes a DNS/SRP Service Unicast Address with an address and port number. The address and port information
+ * is included in Service TLV data. Any current DNS/SRP Service entry being published from a previous call to
+ * any `otNetDataPublishDnsSrpService{Anycast|Unicast}()` functions or sent from the `publish dnssrp` CLI Command is removed
+ * and replaced with the new arguments. 
  *
- * This function requires the feature `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` to be enabled.
- *
- * A call to this function will remove and replace any previous "DNS/SRP Service" entry that was being published (from
- * earlier call to any of `otNetDataPublishDnsSrpService{Type}()` functions).
- *
- * This function publishes the "DNS/SRP Service Unicast Address" by including the address and port info in the Service
- * TLV data.
+ * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
+ * 
+ * @cli netdata publish dnssrp unicast
+ * @code
+ * netdata publish dnssrp unicast fd00::1234 51525
+ * Done
+ * @endcode
+ * @par Parameter `netdata publish dnssrp unicast <address> <port>`
+ * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
+ * The address and port information is included in Service TLV data.
+ * @sa netdata publish dnssrp unicast mle
+ * @sa netdata publish dnssrp anycast 
  *
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aAddress   The DNS/SRP server address to publish (MUST NOT be NULL).
  * @param[in] aPort      The SRP server port number to publish.
+ * 
+ * @sa otNetDataPublishDnsSrpServiceUnicastMeshLocalEid
+ * @sa otNetDataPublishDnsSrpServiceAnycast
  *
  */
 void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Address *aAddress, uint16_t aPort);
