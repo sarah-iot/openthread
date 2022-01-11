@@ -106,10 +106,10 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * netdata publish dnssrp anycast 1
  * Done
  * @endcode
- * @par Parameter `netdata publish dnssrp anycast <seq-num>`
+ * @par Parameters `netdata publish dnssrp anycast <seq-num>`
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * @sa netdata publish dnssrp unicast
- * @sa netdata publish dnssrp unicast mle
+ * @sa netdata publish dnssrp unicast (addr,port)
+ * @sa netdata publish dnssrp unicast (mle)
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
  * @param[in] aSequenceNUmber  The sequence number of DNS/SRP Anycast Service.
@@ -128,12 +128,12 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  * 
- * @cli netdata publish dnssrp unicast
+ * @cli netdata publish dnssrp unicast (addr,port)
  * @code
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @par Parameter `netdata publish dnssrp unicast <address> <port>`
+ * @par Parameters `netdata publish dnssrp unicast <address> <port>`
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
  * @sa netdata publish dnssrp unicast mle

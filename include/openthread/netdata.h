@@ -137,12 +137,8 @@ typedef struct otServiceConfig
 } otServiceConfig;
 
 /**
- * This method provides a full or stable copy of the Partition's Thread network data, including
+ * Provides a full or stable copy of the Partition's Thread network data, including
  * prefixes, routes, and services.
- * 
- * For more information on network data and network data CLI Commands, refer to the
- * [Network Data Quick Start](/reference/cli/quickstarts/netdata). For OTBR specific network APIs,
- * refer to #otBorderRouterGetNetData, #otBorderRoutingGetOnLinkPrefix, and #otBorderRouterGetNextOnMeshPrefix.
  * 
  * @cli netdata show
  * @code
@@ -156,12 +152,13 @@ typedef struct otServiceConfig
  * 44970 01 9a04b000000e10 s 4000
  * Done
  * @endcode
- * @par Parameters
- * `netdata show [-x]`
- * @par 
- * `netdata show` combines several APIs to return network data. To return binary network data, pass the
- * optional argument `-x`.
- * @note The CLI command returns full network data.
+ * @par Parameters `netdata show [-x]`
+ * The optional `-x` argument returns binary network data.
+ * @note `netdata show` from OT CLI returns full network data. This command uses several API functions to 
+ * combine prefixes, routes, and services, including #otNetDataGetNextOnMeshPrefix, #otNetDataGetNextRoute,
+ * and #otNetDataGetNextService.
+ * @par
+ * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
  * @sa br omrprefix
  * @sa br onlinkprefix
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
@@ -172,6 +169,8 @@ typedef struct otServiceConfig
  * @param[inout]  aDataLength  On entry, size of the data buffer pointed to by @p aData.
  *                             On exit, number of copied bytes.
  *
+ * @sa For OTBR specific network APIs, refer to #otBorderRouterGetNetData, #otBorderRoutingGetOnLinkPrefix,
+ * and #otBorderRouterGetNextOnMeshPrefix.
  */
 otError otNetDataGet(otInstance *aInstance, bool aStable, uint8_t *aData, uint8_t *aDataLength);
 
