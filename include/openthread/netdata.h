@@ -156,12 +156,15 @@ typedef struct otServiceConfig
  * 44970 01 9a04b000000e10 s 4000
  * Done
  * @endcode
- * @par `netdata show` combines several APIs to return network data. To review the CLI code, refer to the 
- * [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401).
+ * @par Parameters
+ * `netdata show [-x]`
+ * @par 
+ * `netdata show` combines several APIs to return network data. To return binary network data, pass the
+ * optional argument `-x`.
  * @note The CLI command returns full network data.
- * @sa [br omrprefix](/reference/cli/commands#br_omrprefix)
- * @sa [br onlinkprefix](/reference/cli/commands#br_onlinkprefix)
- * @cliref br test
+ * @sa br omrprefix
+ * @sa br onlinkprefix
+ * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
  * 
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
