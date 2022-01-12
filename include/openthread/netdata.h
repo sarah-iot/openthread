@@ -176,8 +176,8 @@ typedef struct otServiceConfig
  * and #otNetDataGetNextService.
  * @par
  * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
- * @cmd br omrprefix
- * @cmd br onlinkprefix
+ * @cmd{br omrprefix}
+ * @cmd{br onlinkprefix}
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
  * @sa #otBorderRouterGetNetData
  * 
