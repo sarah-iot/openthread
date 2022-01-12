@@ -45,6 +45,19 @@ extern "C" {
  * @addtogroup api-thread-general
  *
  * @{
+ * 
+ * @cli netdata help
+ * @code
+ * netdata help
+ * help
+ * publish
+ * register
+ * show
+ * steeringdata
+ * unpublish
+ * Done
+ * @endcode
+ * 
  *
  */
 
@@ -61,25 +74,25 @@ typedef struct otBorderRouterConfig
 {
     otIp6Prefix mPrefix;           ///< The IPv6 prefix.
     signed int  mPreference : 2;   ///< A 2-bit signed int preference (`OT_ROUTE_PREFERENCE_*` values).
-                                   ///< Use `high`, `med`, or `low` for the `prefix add` CLI Command.
+                                   ///< Maps to `high`, `med`, or `low` in OT CLI.
     bool        mPreferred : 1;    ///< Whether prefix is preferred.
-                                   ///< Use `p` for the `prefix add` CLI Command.
+                                   ///< Maps to `p` in OT CLI.
     bool        mSlaac : 1;        ///< Whether prefix can be used for address auto-configuration (SLAAC).
-                                   ///< Use `a` for the `prefix add` CLI Command.
+                                   ///< Maps to `a` in OT CLI.
     bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. 
-                                   ///< Use `d` for the `prefix add` CLI Command.
+                                   ///< Maps to `d` in OT CLI.
     bool        mConfigure : 1;    ///< Whether DHCPv6 Agent supplying other config data.
-                                   ///< Use `c` for the `prefix add` CLI Command.
+                                   ///< Mapst to `c` in OT CLI.
     bool        mDefaultRoute : 1; ///< Whether border router is a default router for prefix.
-                                   ///< Use `r` for the `prefix add` CLI Command.
+                                   ///< Maps to `r` in OT CLI.
     bool        mOnMesh : 1;       ///< Whether this prefix is considered On-Mesh.
-                                   ///< Use `o` for the `prefix add` CLI Command.
+                                   ///< Mapst to `o` in OT CLI.
     bool        mStable : 1;       ///< Whether this configuration is considered Stable Network Data.
-                                   ///< Use `s` for the `prefix add` CLI Command.
+                                   ///< Maps to`s` in OT CLI.
     bool        mNdDns : 1;        ///< Whether this border router can supply DNS information via ND.
-                                   ///< Use `n` for the `prefix add` CLI Command.
+                                   ///< Maps to `n` in OT CLI.
     bool        mDp : 1;           ///< Whether prefix is a Thread Domain Prefix (added since Thread 1.2).
-                                   ///< Use `D` for the `prefix add` CLI Command.
+                                   ///< Maps to `D` in OT CLI.
     uint16_t    mRloc16;           ///< The border router's RLOC16 (value ignored on config add).
 } otBorderRouterConfig;
 
@@ -154,7 +167,8 @@ typedef struct otServiceConfig
  * @endcode
  * @par Parameters `netdata show [-x]`
  * The optional `-x` argument returns binary network data.
- * @note `netdata show` from OT CLI returns full network data. This command uses several API functions to 
+ * @par
+ * `netdata show` from OT CLI returns full network data. This command uses several API functions to 
  * combine prefixes, routes, and services, including #otNetDataGetNextOnMeshPrefix, #otNetDataGetNextRoute,
  * and #otNetDataGetNextService.
  * @par
@@ -162,6 +176,7 @@ typedef struct otServiceConfig
  * @sa br omrprefix
  * @sa br onlinkprefix
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
+ * @sa #otBorderRouterGetNetData
  * 
  * @param[in]     aInstance    A pointer to an OpenThread instance.
  * @param[in]     aStable      TRUE when copying the stable version, FALSE when copying the full version.
@@ -169,8 +184,6 @@ typedef struct otServiceConfig
  * @param[inout]  aDataLength  On entry, size of the data buffer pointed to by @p aData.
  *                             On exit, number of copied bytes.
  *
- * @sa For OTBR specific network APIs, refer to #otBorderRouterGetNetData, #otBorderRoutingGetOnLinkPrefix,
- * and #otBorderRouterGetNextOnMeshPrefix.
  */
 otError otNetDataGet(otInstance *aInstance, bool aStable, uint8_t *aData, uint8_t *aDataLength);
 

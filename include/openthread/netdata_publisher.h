@@ -95,8 +95,8 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
                                                  void *                  aContext);
 
 /**
- * Requests a DNS/SRP Service Anycast Address to be published in the Thread Network Data. Any current
- * DNS/SRP Service entry being published from a previous call to any `otNetDataPublishDnsSrpService{Anycast|Unicast}()`
+ * Publishes a DNS/SRP Service Anycast Address with a sequence number. Any current
+ * DNS/SRP Service entry being published from a previous call to `otNetDataPublishDnsSrpService{Anycast|Unicast}`
  * functions or sent from the `publish dnssrp` CLI Command is removed and replaced with the new arguments. 
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
@@ -108,8 +108,8 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * @endcode
  * @par Parameters `netdata publish dnssrp anycast <seq-num>`
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * @sa netdata publish dnssrp unicast (addr,port)
- * @sa netdata publish dnssrp unicast (mle)
+ * @sa netdata publish dnssrp unicast <addr>
+ * @sa netdata publish dnssrp unicast
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
  * @param[in] aSequenceNUmber  The sequence number of DNS/SRP Anycast Service.
@@ -123,21 +123,21 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
 /**
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. The address and port information
  * is included in Service TLV data. Any current DNS/SRP Service entry being published from a previous call to
- * any `otNetDataPublishDnsSrpService{Anycast|Unicast}()` functions or sent from the `publish dnssrp` CLI Command is removed
+ * `otNetDataPublishDnsSrpService{Anycast|Unicast}` functions or sent from the `publish dnssrp` CLI Command is removed
  * and replaced with the new arguments. 
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  * 
- * @cli netdata publish dnssrp unicast (addr,port)
+ * @cli netdata publish dnssrp unicast <addr>
  * @code
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @par Parameters `netdata publish dnssrp unicast <address> <port>`
+ * @par Parameters `netdata publish dnssrp unicast <address> [port]`
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
- * @sa netdata publish dnssrp unicast mle
- * @sa netdata publish dnssrp anycast 
+ * @sa netdata publish dnssrp unicast <mle>
+ * @sa netdata publish dnssrp anycast
  *
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aAddress   The DNS/SRP server address to publish (MUST NOT be NULL).
@@ -150,19 +150,31 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
 void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Address *aAddress, uint16_t aPort);
 
 /**
- * This function requests "DNS/SRP Service Unicast Address" to be published in the Thread Network Data.
+ * Publishes the device's Mesh-Local EID with a port number. MLE and port information is included in the
+ * Server TLV data. To use a different Unicast address, refer to #otNetDataPublishDnsSrpServiceUnicast
+ * or use the `netdata publish dnssrp unicast <addr>` CLI Command.
+ * 
+ * Any current DNS/SRP Service entry being published from a previous call to 
+ * `otNetDataPublishDnsSrpService{Anycast|Unicast}` functions or sent from the `publish dnssrp` CLI Command
+ * is removed and replaced with the new arguments.
  *
- * This function requires the feature `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` to be enabled.
+ * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  *
- * A call to this function will remove and replace any previous "DNS/SRP Service" entry that was being published (from
- * earlier call to any of `otNetDataPublishDnsSrpService{Type}()` functions).
- *
- * Unlike `otNetDataPublishDnsSrpServiceUnicast()` which requires the published address to be given and includes the
- * info in the Service TLV data, this function uses the device's mesh-local EID and includes the info in the Server TLV
- * data.
- *
+ * @cli netdata publish dnssrp unicast
+ * @code 
+ * netdata publish dnssrp unicast 50152
+ * Done
+ * @endcode
+ * @par Parameters `netdata publish dnssrp unicast <port>`
+ * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
+ * EID for the address. The address and port information is included in Server TLV data.
+ * @sa netdata publish dnssrp unicast <addr>
+ * @sa netdata publish dnssrp anycast
+ * 
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aPort      The SRP server port number to publish.
+ * 
+ * @sa otNetDataPublishDnsSrpServiceUnicast
  *
  */
 void otNetDataPublishDnsSrpServiceUnicastMeshLocalEid(otInstance *aInstance, uint16_t aPort);

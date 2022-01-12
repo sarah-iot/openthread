@@ -263,8 +263,7 @@ otError otBorderRouterGetNextRoute(otInstance *           aInstance,
 
 /**
  * Immediately register local network data with the Leader, including configured prefixes,
- * routes, and services. For more information on network data and network data CLI Commands,
- * refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
+ * routes, and services.
  * 
  * @cli netdata register
  * @code
@@ -274,8 +273,9 @@ otError otBorderRouterGetNextRoute(otInstance *           aInstance,
  * @par
  * OT CLI checks for `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE`. If OTBR is enabled, it
  * registers local network data with the Leader. Otherwise, it calls `otServerRegister`.
- * @sa #otServerAddService
+ * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
  * @sa prefix add
+ * @sa #otServerAddService
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.
  *
