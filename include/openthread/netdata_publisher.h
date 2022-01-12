@@ -233,9 +233,9 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * @endcode
  * @par Parameters `publish prefix <prefix> [padcrosnD] [high, med, or low]`
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
- * to the @clihome{index,CLI Overview}.
+ * to the @lcli{index,CLI Overview}.
  * @par
- * For more information, refer to the @qstart{netdata,Network Data Quick Start}.
+ * For more information, refer to the @lqstart{netdata,Network Data Quick Start}.
  * 
  * @param[in] aInstance           A pointer to an OpenThread instance.
  * @param[in] aConfig             The On-Mesh Prefix config to publish (MUST NOT be NULL).
