@@ -108,7 +108,7 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * @endcode
  * @par Parameters `netdata publish dnssrp anycast <seq-num>`
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * @sa netdata publish dnssrp unicast <addr>
+ * @sa netdata publish dnssrp unicast (by addr)
  * @sa netdata publish dnssrp unicast
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
@@ -128,7 +128,7 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  * 
- * @cli netdata publish dnssrp unicast <addr>
+ * @cli netdata publish dnssrp unicast (by addr)
  * @code
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
@@ -136,7 +136,7 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * @par Parameters `netdata publish dnssrp unicast <address> [port]`
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
- * @sa netdata publish dnssrp unicast <mle>
+ * @sa netdata publish dnssrp unicast (by mle)
  * @sa netdata publish dnssrp anycast
  *
  * @param[in] aInstance  A pointer to an OpenThread instance.
@@ -152,7 +152,7 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
 /**
  * Publishes the device's Mesh-Local EID with a port number. MLE and port information is included in the
  * Server TLV data. To use a different Unicast address, refer to #otNetDataPublishDnsSrpServiceUnicast
- * or use the `netdata publish dnssrp unicast <addr>` CLI Command.
+ * or use the `netdata publish dnssrp unicast (by addr)` CLI Command.
  * 
  * Any current DNS/SRP Service entry being published from a previous call to 
  * `otNetDataPublishDnsSrpService{Anycast|Unicast}` functions or sent from the `publish dnssrp` CLI Command
@@ -160,7 +160,7 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  *
  * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
  *
- * @cli netdata publish dnssrp unicast
+ * @cli netdata publish dnssrp unicast (by mle)
  * @code 
  * netdata publish dnssrp unicast 50152
  * Done

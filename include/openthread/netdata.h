@@ -57,6 +57,9 @@ extern "C" {
  * unpublish
  * Done
  * @endcode
+ * @par
+ * Provides a list of `netdata` CLI Commands.
+ * @qstart{netdata,Network Data Quick Start}
  * 
  *
  */
