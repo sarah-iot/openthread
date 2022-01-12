@@ -166,13 +166,8 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Done
  * @endcode
  * @par Parameters `prefix add <prefix> [padcrosnD] [high, med, or low]`
- * Prefix is required. Use the optional arguments `p`, `a`, `d`, `c`, `r`, `o`, `s`, `n`, or `D` to set the
- * #otBorderRouterConfig values. For example, the letter combination `paros` sets the 
- * `#otBorderRouterConfig::mPreferred`, `#otBorderRouterConfig::mSlaac`, `#otBorderRouterConfig::mDefaultRoute`,
- * `#otBorderRouterConfig::mOnMesh`, and `#otBorderRouterConfig::mStable` flags, consecutively.
- * To set the #otRoutePreference, use `high`, `med`, or `low`.
- * @par
- * OT CLI uses pre-defined arguments to configure #otBorderRouterConfig values. For more information, refer to Parameters.
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
+ * to [CLI Overview](/reference/cli).
  * 
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.

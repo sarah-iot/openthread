@@ -221,20 +221,30 @@ void otNetDataSetDnsSrpServicePublisherCallback(otInstance *                    
 void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
 
 /**
- * This function requests an on-mesh prefix to be published in the Thread Network Data.
+ * Requests an On-Mesh Prefix to be published in the Thread Network Data. Only stable entries can be 
+ * published, which means that #otBorderRouterConfig::mStable must be set to `true`.
  *
- * This function requires the feature `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` to be enabled.
- *
- * Only stable entries can be published (i.e.,`aConfig.mStable` MUST be TRUE).
- *
+ * `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` must also be enabled.
+ * 
+ * @cli netdata publish prefix
+ * @code   
+ * netdata publish prefix fd00:1234:5678::/64 paos med
+ * Done
+ * @endcode
+ * @par Parameters `publish prefix <prefix> [padcrosnD] [high, med, or low]`
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
+ * to the @clihome{index,CLI Overview}.
+ * @par
+ * For more information, refer to the @qstart{netdata,Network Data Quick Start}.
+ * 
  * @param[in] aInstance           A pointer to an OpenThread instance.
- * @param[in] aConfig             The on-mesh prefix config to publish (MUST NOT be NULL).
+ * @param[in] aConfig             The On-Mesh Prefix config to publish (MUST NOT be NULL).
  *
- * @retval OT_ERROR_NONE          The on-mesh prefix is published successfully.
+ * @retval OT_ERROR_NONE          Published the On-Mesh Prefix successfully.
  * @retval OT_ERROR_INVALID_ARGS  The @p aConfig is not valid (bad prefix, invalid flag combinations, or not stable).
  * @retval OT_ERROR_ALREADY       An entry with the same prefix is already in the published list.
  * @retval OT_ERROR_NO_BUFS       Could not allocate an entry for the new request. Publisher supports a limited number
- *                                of entries (shared between on-mesh prefix and external route) determined by config
+ *                                of entries (shared between On-Mesh Prefix and External Route) determined by config
  *                                `OPENTHREAD_CONFIG_NETDATA_PUBLISHER_MAX_PREFIX_ENTRIES`.
  *
  *
