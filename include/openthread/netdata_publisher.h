@@ -108,8 +108,8 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * @endcode
  * @par Parameters `netdata publish dnssrp anycast <seq-num>`
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * @sa netdata publish dnssrp unicast (by addr)
- * @sa netdata publish dnssrp unicast
+ * @cmd{netdata publish dnssrp unicast (by addr)}
+ * @cmd{netdata publish dnssrp unicast}
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
  * @param[in] aSequenceNUmber  The sequence number of DNS/SRP Anycast Service.
@@ -136,8 +136,8 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * @par Parameters `netdata publish dnssrp unicast <address> [port]`
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
- * @sa netdata publish dnssrp unicast (by mle)
- * @sa netdata publish dnssrp anycast
+ * @cmd{netdata publish dnssrp unicast (by mle)}
+ * @cmd{netdata publish dnssrp anycast}
  *
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aAddress   The DNS/SRP server address to publish (MUST NOT be NULL).
@@ -168,8 +168,8 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  * @par Parameters `netdata publish dnssrp unicast <port>`
  * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
  * EID for the address. The address and port information is included in Server TLV data.
- * @sa netdata publish dnssrp unicast <addr>
- * @sa netdata publish dnssrp anycast
+ * @cmd{netdata publish dnssrp unicast (by addr)}
+ * @cmd{netdata publish dnssrp anycast}
  * 
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aPort      The SRP server port number to publish.
