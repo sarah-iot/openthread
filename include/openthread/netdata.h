@@ -168,14 +168,19 @@ typedef struct otServiceConfig
  * 44970 01 9a04b000000e10 s 4000
  * Done
  * @endcode
+ * @code
+ * netdata show -x
+ * 08040b02174703140040fd00deadbeefcafe0504dc00330007021140
+ * Done
+ * @endcode
  * @cparam netdata show [-x]
- * The optional `-x` argument returns binary network data.
+ * The optional `-x` argument returns Network Data as hex-encoded TLVs.
  * @par
  * `netdata show` from OT CLI returns full network data. This command uses several API functions to 
  * combine prefixes, routes, and services, including #otNetDataGetNextOnMeshPrefix, #otNetDataGetNextRoute,
  * and #otNetDataGetNextService.
  * @par
- * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}
  * @csa{br omrprefix}
  * @csa{br onlinkprefix}
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
@@ -256,7 +261,28 @@ uint8_t otNetDataGetStableVersion(otInstance *aInstance);
 
 /**
  * Check if the steering data includes a Joiner.
- *
+ * 
+ * @cli netdata steeringdata check
+ * @code
+ * netdata steeringdata check d45e64fa83f81cf7
+ * Done
+ * @endcode
+ * @code
+ * netdata steeringdata check 0xabc/12
+ * Done
+ * @endcode
+ * @code
+ * netdata steeringdata check 0xdef/12
+ * Error 23: NotFound
+ * @endcode
+ * @cparams netdata steeringdata check \<eui64\>|\<discerner\>
+ * *   `eui64`: The IEEE EUI-64 of the Joiner.
+ * *   `discerner`: The Joiner discerner in format `{number}/{length}`.
+ * @par
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}
+ * @csa eui64
+ * @csa joiner discerner
+ * 
  * @param[in]  aInstance          A pointer to an OpenThread instance.
  * @param[in]  aEui64             A pointer to the Joiner's IEEE EUI-64.
  *

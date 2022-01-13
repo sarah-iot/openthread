@@ -210,18 +210,24 @@ void otNetDataSetDnsSrpServicePublisherCallback(otInstance *                    
                                                 void *                                  aContext);
 
 /**
- * This function unpublishes any previously added "DNS/SRP (Anycast or Unicast) Service" entry from the Thread Network
+ * Unpublishes any previously added DNS/SRP (Anycast or Unicast) Service entry from the Thread Network
  * Data.
  *
- * This function requires the feature `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` to be enabled.
- *
+ * `OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE` must be enabled.
+ * 
+ * @cli netdata unpublish dnssrp
+ * @code
+ * netdata unpublish dnssrp
+ * Done
+ * @endcode
+ * 
  * @param[in] aInstance  A pointer to an OpenThread instance.
  *
  */
 void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
 
 /**
- * Requests an On-Mesh Prefix to be published in the Thread Network Data. Only stable entries can be 
+ * Publishes an On-Mesh Prefix to the Thread network data. Only stable entries can be 
  * published, which means that #otBorderRouterConfig::mStable must be set to `true`.
  *
  * `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` must also be enabled.
@@ -232,8 +238,7 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * Done
  * @endcode
  * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high, med, or low]
- * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
- * to the @clink{index,CLI Overview}.
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@clink{index,CLI Overview}}.
  * @par
  * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  * 
@@ -252,20 +257,29 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
 otError otNetDataPublishOnMeshPrefix(otInstance *aInstance, const otBorderRouterConfig *aConfig);
 
 /**
- * This function requests an external route prefix to be published in the Thread Network Data.
+ * Publishes an External Route Prefix to the Thread Network Data. Only stable entries can be 
+ * published, which means that #otExternalRouteConfig::mStable must be set to `true`.
  *
- * This function requires the feature `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` to be enabled.
- *
- * Only stable entries can be published (i.e.,`aConfig.mStable` MUST be TRUE).
+ * `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` must be enabled.
+ * 
+ * @cli netdata publish route
+ * @code
+ * netdata publish route fd00:1234:5678::/64 s high
+ * Done
+ * @endcode
+ * @cparam publish route \<prefix\> [sn] [high, med, or low]
+ * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@clink{index,CLI Overview}}.
+ * @par
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  *
  * @param[in] aInstance           A pointer to an OpenThread instance.
  * @param[in] aConfig             The external route config to publish (MUST NOT be NULL).
  *
- * @retval OT_ERROR_NONE          The external route is published successfully.
+ * @retval OT_ERROR_NONE          Published the external route successfully.
  * @retval OT_ERROR_INVALID_ARGS  The @p aConfig is not valid (bad prefix, invalid flag combinations, or not stable).
  * @retval OT_ERROR_ALREADY       An entry with the same prefix is already in the published list.
  * @retval OT_ERROR_NO_BUFS       Could not allocate an entry for the new request. Publisher supports a limited number
- *                                of entries (shared between on-mesh prefix and external route) determined by config
+ *                                of entries (shared between On-Mesh Prefix and External Route) determined by config
  *                                `OPENTHREAD_CONFIG_NETDATA_PUBLISHER_MAX_PREFIX_ENTRIES`.
  */
 otError otNetDataPublishExternalRoute(otInstance *aInstance, const otExternalRouteConfig *aConfig);
@@ -303,10 +317,19 @@ void otNetDataSetPrefixPublisherCallback(otInstance *                     aInsta
                                          void *                           aContext);
 
 /**
- * This function unpublishes a previously published prefix (on-mesh or external route).
+ * Unpublishes a previously published On-Mesh or External Route Prefix.
  *
- * This function requires the feature `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` to be enabled.
- *
+ * `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE` must be enabled.
+ * 
+ * @cli netdata unpublish (prefix)
+ * @code
+ * netdata unpublish fd00:1234:5678::/64
+ * Done
+ * @endcode
+ * @cparams netdata unpublish \<prefix\>
+ * @par
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * 
  * @param[in] aInstance          A pointer to an OpenThread instance.
  * @param[in] aPrefix            The prefix to unpublish (MUST NOT be NULL).
  *

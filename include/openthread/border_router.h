@@ -267,7 +267,7 @@ otError otBorderRouterGetNextRoute(otInstance *           aInstance,
  * @endcode
  * @par
  * OT CLI checks for `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE`. If OTBR is enabled, it
- * registers local network data with the Leader. Otherwise, it calls `otServerRegister`.
+ * registers local network data with the Leader. Otherwise, it calls the CLI function `otServerRegister`.
  * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  * @csa{prefix add}
  * @sa #otServerAddService
