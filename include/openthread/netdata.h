@@ -280,8 +280,8 @@ uint8_t otNetDataGetStableVersion(otInstance *aInstance);
  * *   `discerner`: The Joiner discerner in format `{number}/{length}`.
  * @par
  * @moreinfo{@qlink{netdata,Network Data Quick Start}}
- * @csa eui64
- * @csa joiner discerner
+ * @csa{eui64}
+ * @csa{joiner discerner}
  * 
  * @param[in]  aInstance          A pointer to an OpenThread instance.
  * @param[in]  aEui64             A pointer to the Joiner's IEEE EUI-64.

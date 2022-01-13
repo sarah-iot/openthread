@@ -183,7 +183,7 @@ const otExtAddress *otJoinerGetId(otInstance *aInstance);
  * Use `{number}/{length}` to set the `discerner`.
  * @par
  * `joiner discerner clear` sets `aDiscerner` to `nullptr`.
- * @csa joiner discerner (get)
+ * @csa{joiner discerner (get)}
  *
  * @param[in]   aInstance    A pointer to the OpenThread instance.
  * @param[in]   aDiscerner   A pointer to a Joiner Discerner. If NULL clears any previously set discerner.
@@ -204,7 +204,7 @@ otError otJoinerSetDiscerner(otInstance *aInstance, otJoinerDiscerner *aDiscerne
  * 0xabc/12
  * Done
  * @endcode
- * @csa joiner discerner (set,clear)
+ * @csa{joiner discerner (set,clear)}
  *
  * @param[in]   aInstance       A pointer to the OpenThread instance.
  *
