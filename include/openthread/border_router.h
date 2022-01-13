@@ -268,8 +268,8 @@ otError otBorderRouterGetNextRoute(otInstance *           aInstance,
  * @par
  * OT CLI checks for `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE`. If OTBR is enabled, it
  * registers local network data with the Leader. Otherwise, it calls `otServerRegister`.
- * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
- * @cmd{prefix add}
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * @csa{prefix add}
  * @sa #otServerAddService
  *
  * @param[in]  aInstance A pointer to an OpenThread instance.

@@ -59,7 +59,7 @@ extern "C" {
  * @endcode
  * @par
  * Provides a list of `netdata` CLI Commands.
- * @qstart{netdata,Network Data Quick Start}
+ * @qsa{netdata,Network Data Quick Start}
  * 
  *
  */
@@ -176,8 +176,8 @@ typedef struct otServiceConfig
  * and #otNetDataGetNextService.
  * @par
  * For more information, refer to the [Network Data Quick Start](/reference/cli/quickstarts/netdata).
- * @cmd{br omrprefix}
- * @cmd{br onlinkprefix}
+ * @csa{br omrprefix}
+ * @csa{br onlinkprefix}
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
  * @sa #otBorderRouterGetNetData
  * 

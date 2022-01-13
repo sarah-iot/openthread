@@ -106,10 +106,10 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * netdata publish dnssrp anycast 1
  * Done
  * @endcode
- * @cparam netdata publish dnssrp anycast <seq-num>
+ * @cparam netdata publish dnssrp anycast \<seq-num\>
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
- * @cmd{netdata publish dnssrp unicast (by addr)}
- * @cmd{netdata publish dnssrp unicast}
+ * @csa{netdata publish dnssrp unicast (by addr)}
+ * @csa{netdata publish dnssrp unicast}
  * 
  * @param[in] aInstance        A pointer to an OpenThread instance.
  * @param[in] aSequenceNUmber  The sequence number of DNS/SRP Anycast Service.
@@ -133,11 +133,11 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @cparam netdata publish dnssrp unicast <address> [port]
+ * @cparam netdata publish dnssrp unicast \<address\> [port]
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
- * @cmd{netdata publish dnssrp unicast (by mle)}
- * @cmd{netdata publish dnssrp anycast}
+ * @csa{netdata publish dnssrp unicast (by mle)}
+ * @csa{netdata publish dnssrp anycast}
  *
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aAddress   The DNS/SRP server address to publish (MUST NOT be NULL).
@@ -168,8 +168,8 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  * @cparam netdata publish dnssrp unicast <port>
  * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
  * EID for the address. The address and port information is included in Server TLV data.
- * @cmd{netdata publish dnssrp unicast (by addr)}
- * @cmd{netdata publish dnssrp anycast}
+ * @csa{netdata publish dnssrp unicast (by addr)}
+ * @csa{netdata publish dnssrp anycast}
  * 
  * @param[in] aInstance  A pointer to an OpenThread instance.
  * @param[in] aPort      The SRP server port number to publish.
@@ -233,9 +233,9 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * @endcode
  * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high, med, or low]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
- * to the @lcli{index,CLI Overview}.
+ * to the @clink{index,CLI Overview}.
  * @par
- * For more information, refer to the @lqstart{netdata,Network Data Quick Start}.
+ * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  * 
  * @param[in] aInstance           A pointer to an OpenThread instance.
  * @param[in] aConfig             The On-Mesh Prefix config to publish (MUST NOT be NULL).
