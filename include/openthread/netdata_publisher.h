@@ -231,7 +231,7 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * netdata publish prefix fd00:1234:5678::/64 paos med
  * Done
  * @endcode
- * @cparam publish prefix <prefix> [padcrosnD] [high, med, or low]
+ * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high, med, or low]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
  * to the @lcli{index,CLI Overview}.
  * @par
