@@ -165,7 +165,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * @code prefix add fd00:7d03:7d03:7d03::/64 prosD low
  * Done
  * @endcode
- * @par Parameters `prefix add <prefix> [padcrosnD] [high, med, or low]`
+ * @cparam prefix add <prefix> [padcrosnD] [high, med, or low]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
  * to [CLI Overview](/reference/cli).
  * 

@@ -106,7 +106,7 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * netdata publish dnssrp anycast 1
  * Done
  * @endcode
- * @par Parameters `netdata publish dnssrp anycast <seq-num>`
+ * @cparam netdata publish dnssrp anycast <seq-num>
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
  * @cmd{netdata publish dnssrp unicast (by addr)}
  * @cmd{netdata publish dnssrp unicast}
@@ -133,7 +133,7 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @par Parameters `netdata publish dnssrp unicast <address> [port]`
+ * @cparam netdata publish dnssrp unicast <address> [port]
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
  * @cmd{netdata publish dnssrp unicast (by mle)}
@@ -165,7 +165,7 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  * netdata publish dnssrp unicast 50152
  * Done
  * @endcode
- * @par Parameters `netdata publish dnssrp unicast <port>`
+ * @cparam netdata publish dnssrp unicast <port>
  * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
  * EID for the address. The address and port information is included in Server TLV data.
  * @cmd{netdata publish dnssrp unicast (by addr)}
@@ -231,7 +231,7 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * netdata publish prefix fd00:1234:5678::/64 paos med
  * Done
  * @endcode
- * @par Parameters `publish prefix <prefix> [padcrosnD] [high, med, or low]`
+ * @cparam publish prefix <prefix> [padcrosnD] [high, med, or low]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
  * to the @lcli{index,CLI Overview}.
  * @par

@@ -168,7 +168,7 @@ typedef struct otServiceConfig
  * 44970 01 9a04b000000e10 s 4000
  * Done
  * @endcode
- * @cparam `netdata show [-x]`
+ * @cparam netdata show [-x]
  * The optional `-x` argument returns binary network data.
  * @par
  * `netdata show` from OT CLI returns full network data. This command uses several API functions to 
