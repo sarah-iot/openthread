@@ -237,8 +237,8 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * netdata publish prefix fd00:1234:5678::/64 paos med
  * Done
  * @endcode
- * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high, med, or low]
- * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@clink{index,CLI Overview}}.
+ * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high|med|low]
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@qlink{get-started,OpenThread CLI Overview}}.
  * @par
  * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  * 
@@ -267,8 +267,8 @@ otError otNetDataPublishOnMeshPrefix(otInstance *aInstance, const otBorderRouter
  * netdata publish route fd00:1234:5678::/64 s high
  * Done
  * @endcode
- * @cparam publish route \<prefix\> [sn] [high, med, or low]
- * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@clink{index,CLI Overview}}.
+ * @cparam publish route \<prefix\> [sn] [high|med|low]
+ * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@qlink{get-started,OpenThread CLI Overview}}.
  * @par
  * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
  *

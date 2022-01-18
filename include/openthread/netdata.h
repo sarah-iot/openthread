@@ -85,11 +85,11 @@ typedef struct otBorderRouterConfig
     bool        mDhcp : 1;         ///< Whether border router is DHCPv6 Agent. 
                                    ///< Maps to `d` in OT CLI.
     bool        mConfigure : 1;    ///< Whether DHCPv6 Agent supplying other config data.
-                                   ///< Mapst to `c` in OT CLI.
+                                   ///< Maps to `c` in OT CLI.
     bool        mDefaultRoute : 1; ///< Whether border router is a default router for prefix.
                                    ///< Maps to `r` in OT CLI.
     bool        mOnMesh : 1;       ///< Whether this prefix is considered On-Mesh.
-                                   ///< Mapst to `o` in OT CLI.
+                                   ///< Maps to `o` in OT CLI.
     bool        mStable : 1;       ///< Whether this configuration is considered Stable Network Data.
                                    ///< Maps to`s` in OT CLI.
     bool        mNdDns : 1;        ///< Whether this border router can supply DNS information via ND.
