@@ -238,9 +238,9 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * Done
  * @endcode
  * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high|med|low]
- * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@qlink{get-started,OpenThread CLI Overview}}.
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@overview}.
  * @par
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * @moreinfo{@netdata}.
  * 
  * @param[in] aInstance           A pointer to an OpenThread instance.
  * @param[in] aConfig             The On-Mesh Prefix config to publish (MUST NOT be NULL).
@@ -268,9 +268,9 @@ otError otNetDataPublishOnMeshPrefix(otInstance *aInstance, const otBorderRouter
  * Done
  * @endcode
  * @cparam publish route \<prefix\> [sn] [high|med|low]
- * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@qlink{get-started,OpenThread CLI Overview}}.
+ * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@overview}.
  * @par
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * @moreinfo{@netdata}.
  *
  * @param[in] aInstance           A pointer to an OpenThread instance.
  * @param[in] aConfig             The external route config to publish (MUST NOT be NULL).
@@ -328,7 +328,7 @@ void otNetDataSetPrefixPublisherCallback(otInstance *                     aInsta
  * @endcode
  * @cparams netdata unpublish \<prefix\>
  * @par
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * @moreinfo{@netdata}.
  * 
  * @param[in] aInstance          A pointer to an OpenThread instance.
  * @param[in] aPrefix            The prefix to unpublish (MUST NOT be NULL).

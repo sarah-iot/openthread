@@ -180,7 +180,7 @@ typedef struct otServiceConfig
  * combine prefixes, routes, and services, including #otNetDataGetNextOnMeshPrefix, #otNetDataGetNextRoute,
  * and #otNetDataGetNextService.
  * @par
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}
+ * @moreinfo{@netdata}.
  * @csa{br omrprefix}
  * @csa{br onlinkprefix}
  * @sa [NetworkData::ProcessShow function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp#L401)
@@ -279,7 +279,7 @@ uint8_t otNetDataGetStableVersion(otInstance *aInstance);
  * *   `eui64`: The IEEE EUI-64 of the Joiner.
  * *   `discerner`: The Joiner discerner in format `{number}/{length}`.
  * @par
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}
+ * @moreinfo{@netdata}.
  * @csa{eui64}
  * @csa{joiner discerner}
  * 

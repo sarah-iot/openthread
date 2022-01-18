@@ -166,8 +166,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * Done
  * @endcode
  * @cparam prefix add <prefix> [padcrosnD] [high|med|low]
- * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. For more information, refer
- * to @qlink{get-started,OpenThread CLI Overview}.
+ * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@overview}.
  * 
  * @param[in]  aInstance A pointer to an OpenThread instance.
  * @param[in]  aConfig   A pointer to the border router configuration.
@@ -268,7 +267,7 @@ otError otBorderRouterGetNextRoute(otInstance *           aInstance,
  * @par
  * OT CLI checks for `OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE`. If OTBR is enabled, it
  * registers local network data with the Leader. Otherwise, it calls the CLI function `otServerRegister`.
- * @moreinfo{@qlink{netdata,Network Data Quick Start}}.
+ * @moreinfo{@netdata}.
  * @csa{prefix add}
  * @sa #otServerAddService
  *
