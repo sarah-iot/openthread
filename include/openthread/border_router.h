@@ -165,7 +165,7 @@ otError otBorderRouterGetNetData(otInstance *aInstance, bool aStable, uint8_t *a
  * @code prefix add fd00:7d03:7d03:7d03::/64 prosD low
  * Done
  * @endcode
- * @cparam prefix add @req{prefix} @opt{padcrosnD} @opt{high|med|low}
+ * @cparam prefix add @ca{prefix} [@ca{padcrosnD}] [@ca{high}|@ca{med}|@ca{low}]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@overview}.
  * 
  * @param[in]  aInstance A pointer to an OpenThread instance.
