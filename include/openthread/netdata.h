@@ -275,7 +275,7 @@ uint8_t otNetDataGetStableVersion(otInstance *aInstance);
  * netdata steeringdata check 0xdef/12
  * Error 23: NotFound
  * @endcode
- * @cparams netdata steeringdata check {@ca{eui64}|@ca{discerner}}
+ * @cparam netdata steeringdata check {@ca{eui64}|@ca{discerner}}
  * *   `eui64`: The IEEE EUI-64 of the Joiner.
  * *   `discerner`: The Joiner discerner in format `{number}/{length}`.
  * @par

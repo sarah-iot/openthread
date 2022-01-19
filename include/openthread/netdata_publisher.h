@@ -326,7 +326,7 @@ void otNetDataSetPrefixPublisherCallback(otInstance *                     aInsta
  * netdata unpublish fd00:1234:5678::/64
  * Done
  * @endcode
- * @cparams netdata unpublish @ca{prefix}
+ * @cparam netdata unpublish @ca{prefix}
  * @par
  * @moreinfo{@netdata}.
  * 
