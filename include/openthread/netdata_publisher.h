@@ -106,7 +106,7 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * netdata publish dnssrp anycast 1
  * Done
  * @endcode
- * @cparam netdata publish dnssrp anycast <seq-num>
+ * @cparam netdata publish dnssrp anycast @reqparam{seq-num}
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
  * @csa{netdata publish dnssrp unicast (by addr)}
  * @csa{netdata publish dnssrp unicast}
