@@ -106,7 +106,7 @@ typedef void (*otNetDataPrefixPublisherCallback)(otNetDataPublisherEvent aEvent,
  * netdata publish dnssrp anycast 1
  * Done
  * @endcode
- * @cparam netdata publish dnssrp anycast @reqparam{seq-num}
+ * @cparam netdata publish dnssrp anycast @req{seq-num}
  * Publishes a DNS/SRP Service Anycast Address with a sequence number, for example `1`.
  * @csa{netdata publish dnssrp unicast (by addr)}
  * @csa{netdata publish dnssrp unicast}
@@ -133,7 +133,7 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @cparam netdata publish dnssrp unicast <address> [port]
+ * @cparam netdata publish dnssrp unicast @req{address} @opt{port}
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
  * @csa{netdata publish dnssrp unicast (by mle)}
@@ -165,7 +165,7 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  * netdata publish dnssrp unicast 50152
  * Done
  * @endcode
- * @cparam netdata publish dnssrp unicast <port>
+ * @cparam netdata publish dnssrp unicast @req{port}
  * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
  * EID for the address. The address and port information is included in Server TLV data.
  * @csa{netdata publish dnssrp unicast (by addr)}
@@ -237,7 +237,7 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * netdata publish prefix fd00:1234:5678::/64 paos med
  * Done
  * @endcode
- * @cparam netdata publish prefix <prefix> [padcrosnD] [high|med|low]
+ * @cparam netdata publish prefix @req{prefix} @opt{padcrosnD} @opt{high|med|low}
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@overview}.
  * @par
  * @moreinfo{@netdata}.
@@ -267,7 +267,7 @@ otError otNetDataPublishOnMeshPrefix(otInstance *aInstance, const otBorderRouter
  * netdata publish route fd00:1234:5678::/64 s high
  * Done
  * @endcode
- * @cparam publish route <prefix> [sn] [high|med|low]
+ * @cparam publish route @req{prefix} @opt{sn} @opt{high|med|low}
  * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@overview}.
  * @par
  * @moreinfo{@netdata}.
@@ -326,7 +326,7 @@ void otNetDataSetPrefixPublisherCallback(otInstance *                     aInsta
  * netdata unpublish fd00:1234:5678::/64
  * Done
  * @endcode
- * @cparams netdata unpublish <prefix>
+ * @cparams netdata unpublish @req{prefix}
  * @par
  * @moreinfo{@netdata}.
  * 

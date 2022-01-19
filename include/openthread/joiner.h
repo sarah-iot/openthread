@@ -179,7 +179,7 @@ const otExtAddress *otJoinerGetId(otInstance *aInstance);
  * joiner discerner clear
  * Done
  * @endcode
- * @cparams joiner discerner \<discerner\>
+ * @cparam joiner discerner @req{discerner}
  * Use `{number}/{length}` to set the `discerner`.
  * @par
  * `joiner discerner clear` sets `aDiscerner` to `nullptr`.

@@ -173,7 +173,7 @@ typedef struct otServiceConfig
  * 08040b02174703140040fd00deadbeefcafe0504dc00330007021140
  * Done
  * @endcode
- * @cparam netdata show [-x]
+ * @cparam netdata show @opt{-x}
  * The optional `-x` argument returns Network Data as hex-encoded TLVs.
  * @par
  * `netdata show` from OT CLI returns full network data. This command uses several API functions to 
@@ -275,7 +275,7 @@ uint8_t otNetDataGetStableVersion(otInstance *aInstance);
  * netdata steeringdata check 0xdef/12
  * Error 23: NotFound
  * @endcode
- * @cparams netdata steeringdata check <eui64|discerner>
+ * @cparams netdata steeringdata check @req{eui64|discerner}
  * *   `eui64`: The IEEE EUI-64 of the Joiner.
  * *   `discerner`: The Joiner discerner in format `{number}/{length}`.
  * @par
