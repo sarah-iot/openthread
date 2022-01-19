@@ -133,7 +133,7 @@ void otNetDataPublishDnsSrpServiceAnycast(otInstance *aInstance, uint8_t aSequen
  * netdata publish dnssrp unicast fd00::1234 51525
  * Done
  * @endcode
- * @cparam netdata publish dnssrp unicast \<address\> [port]
+ * @cparam netdata publish dnssrp unicast \<address\> \[port\]
  * Publishes a DNS/SRP Service Unicast Address with an address and port number. 
  * The address and port information is included in Service TLV data.
  * @csa{netdata publish dnssrp unicast (by mle)}
@@ -237,7 +237,7 @@ void otNetDataUnpublishDnsSrpService(otInstance *aInstance);
  * netdata publish prefix fd00:1234:5678::/64 paos med
  * Done
  * @endcode
- * @cparam netdata publish prefix \<prefix\> [padcrosnD] [high|med|low]
+ * @cparam netdata publish prefix \<prefix\> \[padcrosnD\] \[high|med|low\]
  * OT CLI uses mapped arguments to configure #otBorderRouterConfig values. @moreinfo{@overview}.
  * @par
  * @moreinfo{@netdata}.
@@ -267,7 +267,7 @@ otError otNetDataPublishOnMeshPrefix(otInstance *aInstance, const otBorderRouter
  * netdata publish route fd00:1234:5678::/64 s high
  * Done
  * @endcode
- * @cparam publish route \<prefix\> [sn] [high|med|low]
+ * @cparam publish route \<prefix\> \[sn\] \[high|med|low\]
  * OT CLI uses mapped arguments to configure #otExternalRouteConfig values. @moreinfo{@overview}.
  * @par
  * @moreinfo{@netdata}.

@@ -173,7 +173,7 @@ typedef struct otServiceConfig
  * 08040b02174703140040fd00deadbeefcafe0504dc00330007021140
  * Done
  * @endcode
- * @cparam netdata show [-x]
+ * @cparam netdata show \[-x\]
  * The optional `-x` argument returns Network Data as hex-encoded TLVs.
  * @par
  * `netdata show` from OT CLI returns full network data. This command uses several API functions to 
