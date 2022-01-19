@@ -165,7 +165,7 @@ void otNetDataPublishDnsSrpServiceUnicast(otInstance *aInstance, const otIp6Addr
  * netdata publish dnssrp unicast 50152
  * Done
  * @endcode
- * @cparam netdata publish dnssrp unicast <port>
+ * @cparam netdata publish dnssrp unicast \<port\>
  * Publishes a DNS/SRP Service Unicast Address with a port number and the device's Mesh-Local 
  * EID for the address. The address and port information is included in Server TLV data.
  * @csa{netdata publish dnssrp unicast (by addr)}
