@@ -4,9 +4,8 @@
  */
 
 /**
- *  A test class. A more elaborate class description.
+ * @class A test class. A more elaborate class description.
  */
- 
 class Javadoc_Test
 {
   public:
