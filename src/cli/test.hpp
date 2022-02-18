@@ -1,8 +1,7 @@
-/*! \class Test
-    \brief A test class.
-
-    A more detailed class description.
-*/
+/**
+ * @file test.hpp
+ * @brief a brief description of a file
+ */
 
 /**
  *  A test class. A more elaborate class description.

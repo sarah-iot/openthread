@@ -27,7 +27,7 @@
  */
 
 /**
- * @file
+ * @file cli_dataset.hpp
  *   This file contains definitions for the CLI interpreter.
  */
 
