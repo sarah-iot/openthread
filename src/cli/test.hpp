@@ -1,3 +1,9 @@
+/*! \class Test
+    \brief A test class.
+
+    A more detailed class description.
+*/
+
 /**
  *  A test class. A more elaborate class description.
  */
