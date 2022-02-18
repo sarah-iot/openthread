@@ -42,6 +42,10 @@
 
 #include "cli/cli_output.hpp"
 
+/**
+ * Test namespace
+ * 
+ */
 namespace ot {
 namespace Cli {
 
@@ -77,6 +81,8 @@ private:
     otError ProcessActiveTimestamp(Arg aArgs[]);
 
     /**
+     * @brief This is the dataset channel command.
+     * 
      * @cli dataset channel
      * @code
      * dataset channel

@@ -250,6 +250,16 @@ exit:
     return error;
 }
 
+/**
+ * @brief This is the dataset channel command.
+ * 
+ * @cli dataset channel
+ * @code
+ * dataset channel
+ * 12
+ * Done
+ * @endcode
+ */
 otError Dataset::ProcessChannel(Arg aArgs[])
 {
     otError error = OT_ERROR_NONE;
