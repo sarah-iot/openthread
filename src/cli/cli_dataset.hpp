@@ -75,6 +75,15 @@ private:
     otError ProcessHelp(Arg aArgs[]);
     otError ProcessActive(Arg aArgs[]);
     otError ProcessActiveTimestamp(Arg aArgs[]);
+
+    /**
+     * @cli dataset channel
+     * @code
+     * dataset channel
+     * 12
+     * Done
+     * @endcode
+    */
     otError ProcessChannel(Arg aArgs[]);
     otError ProcessChannelMask(Arg aArgs[]);
     otError ProcessClear(Arg aArgs[]);
