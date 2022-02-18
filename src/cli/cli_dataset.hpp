@@ -83,8 +83,17 @@ private:
      * 12
      * Done
      * @endcode
-    */
+     */
     otError ProcessChannel(Arg aArgs[]);
+
+    /**
+     * @cli dataset channel
+     * @code
+     * dataset channel
+     * 12
+     * Done
+     * @endcode
+     */    
     otError ProcessChannelMask(Arg aArgs[]);
     otError ProcessClear(Arg aArgs[]);
     otError ProcessCommit(Arg aArgs[]);
