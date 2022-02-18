@@ -1,74 +1,65 @@
-/*
- *  Copyright (c) 2016, The OpenThread Authors.
- *  All rights reserved.
- *
- *  Redistribution and use in source and binary forms, with or without
- *  modification, are permitted provided that the following conditions are met:
- *  1. Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *  2. Redistributions in binary form must reproduce the above copyright
- *     notice, this list of conditions and the following disclaimer in the
- *     documentation and/or other materials provided with the distribution.
- *  3. Neither the name of the copyright holder nor the
- *     names of its contributors may be used to endorse or promote products
- *     derived from this software without specific prior written permission.
- *
- *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- *  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- *  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- *  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
- *  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
- *  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- *  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- *  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
- *  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
- *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- *  POSSIBILITY OF SUCH DAMAGE.
- */
-
 /**
- * @file
- *   This file is a Doxygen test.
+ *  A test class. A more elaborate class description.
  */
-
-#define CLI_DATASET_HPP_
-
-#include "openthread-core-config.h"
-#include <stdarg.h>
-#include <openthread/dataset.h>
-#include "cli/cli_output.hpp"
-
-/**
- * Test namespace
- * 
- */
-namespace ot {
-namespace Cli {
-
-/**
- * This class implements the Dataset CLI interpreter.
- *
- */
-class Dataset : private OutputWrapper
+ 
+class Javadoc_Test
 {
-public:
-    typedef Utils::CmdLineParser::Arg Arg;
-
-    explicit Dataset(Output &aOutput)
-        : OutputWrapper(aOutput)
-    {
-    }
-
-    /**
-     * This method interprets a list of CLI arguments.
-     *
-     * @param[in]  aArgs        An array of command line arguments.
-     *
+  public:
+ 
+    /** 
+     * An enum.
+     * More detailed enum description.
      */
-    otError Process(Arg aArgs[]);
-
-
-} // namespace Cli
-} // namespace ot
-
-#endif // CLI_DATASET_HPP_
+ 
+    enum TEnum { 
+          TVal1, /**< enum value TVal1. */  
+          TVal2, /**< enum value TVal2. */  
+          TVal3  /**< enum value TVal3. */  
+         } 
+       *enumPtr, /**< enum pointer. Details. */
+       enumVar;  /**< enum variable. Details. */
+       
+      /**
+       * A constructor.
+       * A more elaborate description of the constructor.
+       */
+      Javadoc_Test();
+ 
+      /**
+       * A destructor.
+       * A more elaborate description of the destructor.
+       */
+     ~Javadoc_Test();
+    
+      /**
+       * a normal member taking two arguments and returning an integer value.
+       * @param a an integer argument.
+       * @param s a constant character pointer.
+       * @see Javadoc_Test()
+       * @see ~Javadoc_Test()
+       * @see testMeToo()
+       * @see publicVar()
+       * @return The test results
+       */
+       int testMe(int a,const char *s);
+       
+      /**
+       * A pure virtual member.
+       * @see testMe()
+       * @param c1 the first argument.
+       * @param c2 the second argument.
+       */
+       virtual void testMeToo(char c1,char c2) = 0;
+   
+      /** 
+       * a public variable.
+       * Details.
+       */
+       int publicVar;
+       
+      /**
+       * a function variable.
+       * Details.
+       */
+       int (*handler)(int a,int b);
+};
