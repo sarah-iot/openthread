@@ -447,8 +447,8 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
     bool    enable;
 
    /**
-    * @copybrief #otBorderRoutingSetEnabled
-    * @copydetails #otBorderRoutingSetEnabled
+    * @copybrief otBorderRoutingSetEnabled
+    * @copydetails otBorderRoutingSetEnabled
     * @cli br (enable,disable)
     * @code
     * br enable
