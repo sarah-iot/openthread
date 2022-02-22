@@ -42,15 +42,11 @@
 
 #include "cli/cli_output.hpp"
 
-/**
- * Test namespace
- * 
- */
 namespace ot {
 namespace Cli {
 
 /**
- * This class implements the Dataset CLI interpreter.
+ * Implements the Dataset CLI interpreter.
  *
  */
 class Dataset : private OutputWrapper
@@ -81,24 +77,38 @@ private:
     otError ProcessActiveTimestamp(Arg aArgs[]);
 
     /**
-     * @brief This is the dataset channel command.
-     * 
-     * @cli dataset channel
+     * @cli dataset channel (get,set)
      * @code
      * dataset channel
      * 12
      * Done
      * @endcode
+     * @code
+     * dataset channel 12
+     * Done
+     * @endcode
+     * @cparam dataset channel [@ca{channelnum}]
+     * Use the optional `channelnum` argument to set the channel.
+     * @par
+     * Gets or sets #otOperationalDataset::mChannel.
      */
     otError ProcessChannel(Arg aArgs[]);
 
     /**
-     * @cli dataset channel
+     * @cli dataset channelmask (get,set)
      * @code
-     * dataset channel
-     * 12
+     * dataset channelmask
+     * 0x07fff800
      * Done
      * @endcode
+     * @code
+     * dataset channelmask 0x07fff800
+     * Done
+     * @endcode
+     * @cparam dataset channelmask [@ca{channelmask}]
+     * Use the optional `channelmask` argument to set the channel mask.
+     * @par
+     * Gets or sets #otOperationalDataset::mChannelMask
      */    
     otError ProcessChannelMask(Arg aArgs[]);
     otError ProcessClear(Arg aArgs[]);
