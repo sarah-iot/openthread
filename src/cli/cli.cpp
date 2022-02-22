@@ -441,9 +441,6 @@ template <> otError Interpreter::Process<Cmd("ba")>(Arg aArgs[])
 #endif // OPENTHREAD_CONFIG_BORDER_AGENT_ENABLE
 
 #if OPENTHREAD_CONFIG_BORDER_ROUTING_ENABLE
-/**
- * @copybrief #otBorderRoutingSetEnabled
- */
 template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
 {
     otError error = OT_ERROR_NONE;
@@ -461,6 +458,8 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
     * br disable
     * Done
     * @endcode
+    * @par
+    * @copybrief #otBorderRoutingSetEnabled
     * @csa #otBorderRoutingSetEnabled
     */
     if (ParseEnableOrDisable(aArgs[0], enable) == OT_ERROR_NONE)
