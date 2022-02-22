@@ -446,10 +446,33 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
     otError error = OT_ERROR_NONE;
     bool    enable;
 
+   /**
+    * @copybrief #otBorderRoutingSetEnabled
+    * @copydetails #otBorderRoutingSetEnabled
+    * @cli br (enable,disable)
+    * @code
+    * br enable
+    * Done
+    * @endcode
+    * @code
+    * br disable
+    * Done
+    * @endcode
+    */
     if (ParseEnableOrDisable(aArgs[0], enable) == OT_ERROR_NONE)
     {
         SuccessOrExit(error = otBorderRoutingSetEnabled(GetInstancePtr(), enable));
     }
+    /**
+     * @copybrief #otBorderRoutingGetOmrPrefix
+     * @copydetails #otBorderRoutingGetOmrPrefix
+     * @cli br omrprefix
+     * @code
+     * br omrprefix
+     * fdfc:1ff5:1512:5622::/64
+     * Done
+     * @endcode
+     */
     else if (aArgs[0] == "omrprefix")
     {
         otIp6Prefix omrPrefix;
@@ -457,6 +480,13 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
         SuccessOrExit(error = otBorderRoutingGetOmrPrefix(GetInstancePtr(), &omrPrefix));
         OutputIp6PrefixLine(omrPrefix);
     }
+    /**
+     * @cli br onlinkprefix
+     * @code br onlinkprefix
+     * fd41:2650:a6f5:0::/64
+     * Done
+     * @endcode
+     */
     else if (aArgs[0] == "onlinkprefix")
     {
         otIp6Prefix onLinkPrefix;
@@ -465,6 +495,14 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
         OutputIp6PrefixLine(onLinkPrefix);
     }
 #if OPENTHREAD_CONFIG_BORDER_ROUTING_NAT64_ENABLE
+   /**
+    * @cli br nat64prefix
+    * @code
+    * br nat64prefix
+    * fd14:1078:b3d5:b0b0:0:0::/96
+    * Done
+    * @endcode
+    */
     else if (aArgs[0] == "nat64prefix")
     {
         otIp6Prefix nat64Prefix;
