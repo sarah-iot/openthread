@@ -89,6 +89,8 @@
 #include "common/string.hpp"
 #include "mac/channel_mask.hpp"
 
+#define PARAMS_BA_PORT "<port>"
+
 namespace ot {
 namespace Cli {
 
@@ -460,6 +462,8 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
     * @endcode
     * @par
     * @copybrief #otBorderRoutingSetEnabled
+    * @par
+    * PARAMS_BA_PORT
     * @csa #otBorderRoutingSetEnabled
     */
     if (ParseEnableOrDisable(aArgs[0], enable) == OT_ERROR_NONE)
