@@ -458,6 +458,7 @@ template <> otError Interpreter::Process<Cmd("br")>(Arg aArgs[])
     * br disable
     * Done
     * @endcode
+    * @csa otBorderRoutingSetEnabled
     */
     if (ParseEnableOrDisable(aArgs[0], enable) == OT_ERROR_NONE)
     {
