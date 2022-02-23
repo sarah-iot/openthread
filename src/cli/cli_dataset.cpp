@@ -919,8 +919,66 @@ otError Dataset::Process(Arg aArgs[])
     }
 
     static constexpr Command kCommands[] = {
+        /**
+         * @cli dataset active
+         * @code
+         * dataset active
+         * Active Timestamp: 1
+         * Channel: 13
+         * Channel Mask: 0x07fff800
+         * Ext PAN ID: d63e8e3e495ebbc3
+         * Mesh Local Prefix: fd3d:b50b:f96d:722d::/64
+         * Network Key: dfd34f0f05cad978ec4e32b0413038ff
+         * Network Name: OpenThread-8f28
+         * PAN ID: 0x8f28
+         * PSKc: c23a76e98f1a6483639b1ac1271e2e27
+         * Security Policy: 0, onrcb
+         * Done
+         * @endcode
+         * @code
+         * dataset active -x
+         * 0e080000000000010000000300001035060004001fffe002084eb74ab03c56e6d00708fdc7fe165c83a67805108e2104f183e698da87e96efc1e45aa51030f4f70656e5468726561642d383631310102861104108d6273023d82c841eff0e68db86f35740c030000ff
+         * Done
+         * @endcode
+         * @cparam dataset active [-x]
+         * The optional `-x` argument prints the Active Operational Dataset values as a hex-encoded TLVs.
+         * @par
+         * OT CLI uses #otOperationalDataset members to return dataset values to the console.
+         */
         CmdEntry("active"),
+        /**
+         * @cli dataset activetimestamp (get, set)
+         * @code
+         * dataset activetimestamp
+         * 123456789
+         * Done
+         * @endcode
+         * @code
+         * dataset activetimestamp 123456789
+         * Done
+         * @endcode
+         * @cparam dataset activetimestamp [@ca{timestamp}]
+         * Pass the optional `timestamp` argument to set the active timestamp.
+         * @par
+         * Gets or sets #otOperationalDataset::mActiveTimestamp.
+         */
         CmdEntry("activetimestamp"),
+        /**
+         * @cli dataset channel (get,set)
+         * @code
+         * dataset channel
+         * 12
+         * Done
+         * @endcode
+         * @code
+         * dataset channel 12
+         * Done
+         * @endcode
+         * @cparam dataset channel [@ca{channelnum}]
+         * Use the optional `channelnum` argument to set the channel.
+         * @par
+         * Gets or sets #otOperationalDataset::mChannel.
+         */
         CmdEntry("channel"),
         CmdEntry("channelmask"),
         CmdEntry("clear"),

@@ -452,6 +452,52 @@ exit:
     return error;
 }
 
+/**
+ * @cli netdata show
+ * @code
+ * netdata show
+ * Prefixes:
+ * fd00:dead:beef:cafe::/64 paros med dc00
+ * Routes:
+ * fd49:7770:7fc5:0::/64 s med 4000
+ * Services:
+ * 44970 5d c000 s 4000
+ * 44970 01 9a04b000000e10 s 4000
+ * Done
+ * @endcode
+ * @code
+ * netdata show -x
+ * 08040b02174703140040fd00deadbeefcafe0504dc00330007021140
+ * Done
+ * @endcode
+ * @code
+ * netdata show local
+ * Prefixes:
+ * fd00:dead:beef:cafe::/64 paros med dc00
+ * Routes:
+ * Services:
+ * Done
+ * @endcode
+ * @code
+ * netdata show local -x
+ * 08040b02174703140040fd00deadbeefcafe0504dc00330007021140
+ * Done
+ * @endcode
+ * @cparam netdata show [@ca{local}] [@ca{-x}]
+ * *   The optional `-x` argument gets Network Data as hex-encoded TLVs.
+ * *   The optional `local` argument gets local Network Data to sync with Leader.
+ * @par
+ * `netdata show` from OT CLI gets full Network Data. This command uses several API functions to combine
+ * prefixes, routes, and services, including #otNetDataGetNextOnMeshPrefix, #otNetDataGetNextRoute, and
+ * #otNetDataGetNextService.
+ * @par
+ * @moreinfo{@netdata}.
+ * @csa{br omrprefix}
+ * @csa{br onlinkprefix}
+ * @sa [NetworkData::ProcessShow
+ * function](https://github.com/openthread/openthread/blob/main/src/cli/cli_network_data.cpp)
+ * @sa #otBorderRouterGetNetData
+ */
 template <> otError NetworkData::Process<Cmd("show")>(Arg aArgs[])
 {
     otError error  = OT_ERROR_INVALID_ARGS;
