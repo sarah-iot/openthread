@@ -3519,6 +3519,23 @@ template <> otError Interpreter::Process<Cmd("prefix")>(Arg aArgs[])
 {
     otError error = OT_ERROR_NONE;
 
+    /**
+     * @cli prefix
+     * @code
+     * prefix
+     * 2001:dead:beef:cafe::/64 paros med
+     * - fd00:7d03:7d03:7d03::/64 prosD med
+     * Done
+     * @endcode
+     * @par
+     * Get the prefix list in the local Network Data.
+     * @note For the Thread 1.2 border router with backbone capability, the local Domain Prefix
+     * is listed as well and includes the `D` flag. If backbone functionality is disabled, a dash
+     * `-` is printed before the local Domain Prefix.
+     * @par
+     * For more information about #otBorderRouterConfig flags, refer to @overview.
+     * @sa otBorderRouterGetNextOnMeshPrefix
+     */
     if (aArgs[0].IsEmpty())
     {
         otNetworkDataIterator iterator = OT_NETWORK_DATA_ITERATOR_INIT;
