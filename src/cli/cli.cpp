@@ -3437,6 +3437,7 @@ void Interpreter::HandleLinkPcapReceive(const otRadioFrame *aFrame, bool aIsTx)
     OutputLine("");
 }
 
+#if OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE
 otError Interpreter::ParsePrefix(Arg aArgs[], otBorderRouterConfig &aConfig)
 {
     otError error = OT_ERROR_NONE;
@@ -3571,7 +3572,7 @@ template <> otError Interpreter::Process<Cmd("prefix")>(Arg aArgs[])
 exit:
     return error;
 }
-
+#endif // OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE
 
 #if OPENTHREAD_FTD
 template <> otError Interpreter::Process<Cmd("preferrouterid")>(Arg aArgs[])
