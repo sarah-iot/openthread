@@ -4095,7 +4095,7 @@ template <> otError Interpreter::Process<Cmd("locate")>(Arg aArgs[])
      *
      * # Locates the closest destination of a service anycast address.
      * @endcode
-     * @cparam locate ca{anycastaddr}
+     * @cparam locate @ca{anycastaddr}
      * @par api_copy
      * #otThreadLocateAnycastDestination
      * @sa otThreadIsAnycastLocateInProgress
