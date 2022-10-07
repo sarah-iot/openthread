@@ -974,11 +974,14 @@ typedef void (*otThreadAnycastLocatorCallback)(void *              aContext,
                                                uint16_t            aRloc16);
 
 /**
- * This function requests the closest destination of a given anycast address to be located.
+ * Requests the closest destination of a given anycast address to be located.
  *
- * This function is only available when `OPENTHREAD_CONFIG_TMF_ANYCAST_LOCATOR_ENABLE` is enabled.
+ * For example, a request could find the destination's mesh local EID and RLOC16. The closest destination is
+ * determined based on the the current routing table and path costs within the Thread mesh.
  *
- * If a previous request is ongoing, a subsequent call to this function will cancel and replace the earlier request.
+ * Available when `OPENTHREAD_CONFIG_TMF_ANYCAST_LOCATOR_ENABLE` is enabled.
+ *
+ * If a previous request is ongoing, a subsequent call will cancel and replace the earlier request.
  *
  * @param[in] aInstance         A pointer to an OpenThread instance.
  * @param[in] aAnycastAddress   The anycast address to locate. MUST NOT be NULL.

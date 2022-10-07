@@ -4044,12 +4044,63 @@ template <> otError Interpreter::Process<Cmd("locate")>(Arg aArgs[])
     otError      error = OT_ERROR_INVALID_ARGS;
     otIp6Address anycastAddress;
 
+    /**
+     * @cli locate (status)
+     * @code
+     * locate
+     * Idle
+     * Done
+     * @endcode
+     * @code
+     * locate
+     * In Progress
+     * Done
+     * @endcode
+     * @par
+     * Gets the current state (`In Progress` or `Idle`) of the anycast locator.
+     * @par
+     * Available when `OPENTHREAD_CONFIG_TMF_ANYCAST_LOCATOR_ENABLE` is enabled.
+     * @sa otThreadIsAnycastLocateInProgress
+     */
     if (aArgs[0].IsEmpty())
     {
         OutputLine(otThreadIsAnycastLocateInProgress(GetInstancePtr()) ? "In Progress" : "Idle");
         ExitNow(error = OT_ERROR_NONE);
     }
 
+    /**
+     * @cli locate (anycastaddr)
+     * @code
+     * locate fdde:ad00:beef:0:0:ff:fe00:fc00
+     * fdde:ad00:beef:0:d9d3:9000:16b:d03b 0xc800
+     * Done
+     *
+     * # Locates the leader using its anycast address.
+     * @endcode
+     * @code
+     * srp server enable
+     * Done
+     *
+     * > netdata show
+     * Prefixes:
+     * Routes:
+     * Services:
+     * 44970 5d c002 s c800
+     * 44970 5d c002 s cc00
+     * Done
+     *
+     * > locate fdde:ad00:beef:0:0:ff:fe00:fc10
+     * fdde:ad00:beef:0:a477:dc98:a4e4:71ea 0xcc00
+     * Done
+     *
+     * # Locates the closest destination of a service anycast address.
+     * @endcode
+     * @cparam locate ca{anycastaddr}
+     * @par api_copy
+     * #otThreadLocateAnycastDestination
+     * @sa otThreadIsAnycastLocateInProgress
+     * @csa{netdata show}
+     */
     SuccessOrExit(error = aArgs[0].ParseAsIp6Address(anycastAddress));
     SuccessOrExit(error =
                       otThreadLocateAnycastDestination(GetInstancePtr(), &anycastAddress, HandleLocateResult, this));
