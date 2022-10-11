@@ -3262,10 +3262,32 @@ template <> otError Interpreter::Process<Cmd("log")>(Arg aArgs[])
 
     if (aArgs[0] == "level")
     {
+        /**
+         * @cli log level
+         * @code
+         * log level
+         * 1
+         * Done
+         * @endcode
+         * @par api_copy
+         * #otLoggingGetLevel
+         * @csa{log level (set)}
+         */
         if (aArgs[1].IsEmpty())
         {
             OutputLine("%d", otLoggingGetLevel());
         }
+        /**
+         * @cli log level (set)
+         * @code
+         * log level 4
+         * Done
+         * @endcode
+         * @cparam log level @ca{level}
+         * @par api_copy
+         * #otLoggingSetLevel
+         * @csa{log level}
+         */
         else
         {
 #if OPENTHREAD_CONFIG_LOG_LEVEL_DYNAMIC_ENABLE
@@ -3280,6 +3302,13 @@ template <> otError Interpreter::Process<Cmd("log")>(Arg aArgs[])
         }
     }
 #if (OPENTHREAD_CONFIG_LOG_OUTPUT == OPENTHREAD_CONFIG_LOG_OUTPUT_DEBUG_UART) && OPENTHREAD_POSIX
+    /**
+     * @cli log filename
+     * @code
+     * log filename log.txt
+     * Done
+     * @endcode
+     */
     else if (aArgs[0] == "filename")
     {
         VerifyOrExit(aArgs[1].IsEmpty(), error = OT_ERROR_INVALID_ARGS);
