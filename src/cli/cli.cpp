@@ -4098,10 +4098,10 @@ template <> otError Interpreter::Process<Cmd("locate")>(Arg aArgs[])
      * # Locates the closest destination of a service anycast address.
      * @endcode
      * @cparam locate @ca{anycastaddr}
-     * @par
-     * Use the `locate (status)` command to verify the state of the anycast locator.
      * @par api_copy
      * #otThreadLocateAnycastDestination
+     * @par
+     * Use the `locate (status)` command to verify the state of the anycast locator.
      * @sa otThreadIsAnycastLocateInProgress
      * @csa{locate (status)}
      * @csa{netdata show}
