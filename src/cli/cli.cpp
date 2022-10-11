@@ -4057,10 +4057,12 @@ template <> otError Interpreter::Process<Cmd("locate")>(Arg aArgs[])
      * Done
      * @endcode
      * @par
-     * Gets the current state (`In Progress` or `Idle`) of the anycast locator.
+     * Gets the current state (`In Progress` or `Idle`) of the anycast locator. You can call this
+     * command after making a call to `locate (anycastaddr)`.
      * @par
      * Available when `OPENTHREAD_CONFIG_TMF_ANYCAST_LOCATOR_ENABLE` is enabled.
      * @sa otThreadIsAnycastLocateInProgress
+     * @csa{locate (anycastaddr)}
      */
     if (aArgs[0].IsEmpty())
     {
@@ -4098,7 +4100,10 @@ template <> otError Interpreter::Process<Cmd("locate")>(Arg aArgs[])
      * @cparam locate @ca{anycastaddr}
      * @par api_copy
      * #otThreadLocateAnycastDestination
+     * @par
+     * Use the `locate (status)` command to verify the state of the anycast locator.
      * @sa otThreadIsAnycastLocateInProgress
+     * @csa{locate (status)}
      * @csa{netdata show}
      */
     SuccessOrExit(error = aArgs[0].ParseAsIp6Address(anycastAddress));
