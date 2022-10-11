@@ -3308,6 +3308,8 @@ template <> otError Interpreter::Process<Cmd("log")>(Arg aArgs[])
      * log filename log.txt
      * Done
      * @endcode
+     * @par api_copy
+     * #otPlatDebugUart_logfile
      */
     else if (aArgs[0] == "filename")
     {

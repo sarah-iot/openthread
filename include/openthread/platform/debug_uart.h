@@ -173,12 +173,16 @@ void otPlatDebugUart_write_bytes(const uint8_t *pBytes, int nBytes);
 void otPlatDebugUart_puts_no_nl(const char *s);
 
 /**
- * Some platforms (simulation) can log to a file.
+ * Specifies the filename to capture `otPlatLog()` messages (simulation only).
+ *
+ * When debugging automated test scripts on Linux, this is useful when logging disrupts
+ * the automated scripts.
+ *
+ * Available when `OPENTHREAD_CONFIG_LOG_OUTPUT == OPENTHREAD_CONFIG_LOG_OUTPUT_DEBUG_UART` and
+ * `OPENTHREAD_POSIX` is enabled.
  *
  * @returns OT_ERROR_NONE
  * @returns OT_ERROR_FAILED
- *
- * Platforms that desire this MUST provide an implementation.
  *
  */
 otError otPlatDebugUart_logfile(const char *filename);
